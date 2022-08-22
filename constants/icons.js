@@ -24,6 +24,17 @@ const send = require("../assets/icons/send.png");
 const user = require("../assets/icons/user.png");
 const wallet = require("../assets/icons/wallet.png");
 
+const avatar1 = require('../assets/icons/avatar1.png');
+const avatar2 = require('../assets/icons/avatar2.png');
+const avatar3 = require('../assets/icons/avatar3.png');
+const avatar4 = require('../assets/icons/avatar4.png');
+const logout = require('../assets/icons/logout.png');
+const movie_tickets = require('../assets/icons/movie_tickets.png');
+const flight_tickets = require('../assets/icons/flight_tickets.png');
+const bellfilled = require("../assets/icons/bellfilled.png");
+const settingsfilled = require("../assets/icons/settingsfilled.png");
+
+
 export default {
     bookmark,
     bookmarkFilled,
@@ -50,7 +61,18 @@ export default {
     scan,
     send,
     user,
-    wallet
+    wallet,
+
+    avatar1,
+    avatar2,
+    avatar3,
+    avatar4,
+    logout,
+    movie_tickets,
+    flight_tickets,
+    bellfilled,
+    settingsfilled
+
 
 
 

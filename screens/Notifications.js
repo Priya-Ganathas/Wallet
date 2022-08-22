@@ -5,7 +5,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-const Support = ({ navigation }) => {
+const Notifications = ({ navigation }) => {
     return (
         <View
             style={{
@@ -16,12 +16,18 @@ const Support = ({ navigation }) => {
         >
             <Text>Support</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Support")}
+                onPress={() => navigation.navigate("Notifications")}
             >
-                <Text>Navigate to Recipe</Text>
+                <Text>priya</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default Support;
+export default Notifications;
+
+
+
+
+
+

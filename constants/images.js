@@ -2,10 +2,9 @@
 const loginBackground = require("../assets/images/system/login-background.png")
 const onboardingImage = require ("../assets/images/system/onboardingImage.jpeg")
 const FinTechLogo = require("../assets/images/FinTech_logo.png");
-const banner = require("../assets/images/banner.png");
-const promoBanner = require("../assets/images/promo-banner.png");
 const focus = require("../assets/images/focus.png");
-
+const GoPremium = require("../assets/images/GoPremium.png")
+const PowerCut = require("../assets/images/PowerCut.jpeg")
 // Dummy
 const lkFlag = require("../assets/images/lk-flag.jpg");
 
@@ -27,9 +26,9 @@ export default {
     loginBackground,
     FinTechLogo,
     profile,
-    banner,
-    promoBanner,
     focus,
+    GoPremium,
+    PowerCut,
     // Dummy
     lkFlag,
 

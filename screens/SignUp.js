@@ -56,7 +56,7 @@ const SignUp = ({ navigation }) => {
                 style={{
                     flexDirection: 'row',
                     alignItems: "center",
-                    marginTop: SIZES.padding * 1,
+                    marginTop: SIZES.padding *1,
                     paddingHorizontal: SIZES.padding * 1
                 }}
                 onPress={() => console.log("Sign Up")}
@@ -71,7 +71,7 @@ const SignUp = ({ navigation }) => {
                     }}
                 />
 
-                <Text style={{ marginLeft: SIZES.padding * 1.5, color: COLORS.white, ...FONTS.h4 }}>Sign Up</Text>
+                <Text style={{ marginLeft: SIZES.padding * 0.5, color: COLORS.white, ...FONTS.h2 }}> Sign Up</Text>
             </TouchableOpacity>
         )
     }
@@ -101,12 +101,12 @@ const SignUp = ({ navigation }) => {
         return (
             <View
                 style={{
-                    marginTop: SIZES.padding * 0,
+                    marginTop: SIZES.padding * -0.7,
                     marginHorizontal: SIZES.padding * 1.7,
                 }}
             >
                 {/* Full Name */}
-                <View style={{ marginTop: SIZES.padding * 2}}>
+                <View style={{ marginTop: SIZES.padding }}>
                     <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>Full Name</Text>
                     <TextInput
                         style={{
@@ -122,6 +122,26 @@ const SignUp = ({ navigation }) => {
                         selectionColor={COLORS.white}
                     />
                 </View>
+
+                
+                {/*   Email r*/}
+                <View style={{ marginTop: SIZES.padding * 0.5}}>
+                    <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>Email Address</Text>
+                    <TextInput
+                        style={{
+                            marginVertical: SIZES.padding,
+                            borderBottomColor: COLORS.white,
+                            borderBottomWidth: 1,
+                            height: 40,
+                            color: COLORS.white,
+                            ...FONTS.body3
+                        }}
+                        placeholder="Enter Email Address"
+                        placeholderTextColor={COLORS.white}
+                        selectionColor={COLORS.white}
+                    />
+                </View>
+
 
               {/*   Phone Number*/}
                 <View style={{ marginTop: SIZES.padding * 0.5 }}>
@@ -169,7 +189,6 @@ const SignUp = ({ navigation }) => {
                                 <Text style={{ color: COLORS.white, ...FONTS.body3 }}>LK +94 </Text>
                             </View>
                         </TouchableOpacity>
-
                         {/* Phone Number */}
                         <TextInput
                             style={{
@@ -240,7 +259,7 @@ const SignUp = ({ navigation }) => {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}
-                    onPress={() => navigation.navigate("Home")}
+                    // onPress={() => navigation.navigate("Home")}
                 >
                     <Text style={{ color: COLORS.white, ...FONTS.h3 }}>Continue</Text>
                 </TouchableOpacity>

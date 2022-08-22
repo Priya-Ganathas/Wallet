@@ -6,6 +6,7 @@ import {
     TouchableOpacity
 } from "react-native"
 import { RNCamera } from 'react-native-camera'
+import { LogBox } from 'react-native';
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants/Index";
 
@@ -38,8 +39,8 @@ const Scan = ({ navigation }) => {
 
                 <TouchableOpacity
                     style={{
-                        height: 45,
-                        width: 45,
+                        height: 30,
+                        width: 30,
                         backgroundColor: COLORS.green,
                         borderRadius: 10,
                         alignItems: 'center',
@@ -50,8 +51,8 @@ const Scan = ({ navigation }) => {
                     <Image
                         source={icons.info}
                         style={{
-                            height: 25,
-                            width: 25,
+                            height: 18,
+                            width: 18,
                             tintColor: COLORS.white
                         }}
                     />
@@ -73,7 +74,7 @@ const Scan = ({ navigation }) => {
                     source={images.focus}
                     resizeMode="stretch"
                     style={{
-                        marginTop: "-55%",
+                        marginTop: "-30%",
                         width: 200,
                         height: 300
                     }}
@@ -90,8 +91,8 @@ const Scan = ({ navigation }) => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    height: 220,
-                    padding: SIZES.padding * 3,
+                    height: 140,
+                    padding: SIZES.padding * 0.5,
                     borderTopLeftRadius: SIZES.radius,
                     borderTopRightRadius: SIZES.radius,
                     backgroundColor: COLORS.white
@@ -107,7 +108,7 @@ const Scan = ({ navigation }) => {
                         marginTop: SIZES.padding * 2
                     }}
                 >
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={{
                             flexDirection: 'row',
                             alignItems: 'center'
@@ -135,37 +136,38 @@ const Scan = ({ navigation }) => {
                             />
                         </View>
                         <Text style={{ marginLeft: SIZES.padding, ...FONTS.body4 }}>Phone Number</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                     <TouchableOpacity
                         style={{
                             flexDirection: 'row',
                             alignItems: 'center',
-                            marginLeft: SIZES.padding * 2
-                        }}
+                            marginLeft: SIZES.padding * 6.9  }}
                         onPress={() => console.log("Barcode")}
                     >
                         <View
                             style={{
                                 width: 40,
                                 height: 40,
+                                marginTop: -50,
                                 backgroundColor: COLORS.lightGreen,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                borderRadius: 10
+                                borderRadius: 20
                             }}
                         >
                             <Image
                                 source={icons.barcode}
                                 resizeMode="cover"
                                 style={{
+                                    marginTop: 0,
                                     height: 25,
                                     width: 25,
                                     tintColor: COLORS.primary
                                 }}
                             />
                         </View>
-                        <Text style={{ marginLeft: SIZES.padding, ...FONTS.body4 }}>Barcode</Text>
+                        <Text style={{ marginLeft: SIZES.padding * -2.5, ...FONTS.body4, marginTop:20 }}>Barcode Scan</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -201,5 +203,7 @@ const Scan = ({ navigation }) => {
         </View>
     )
 }
+
+LogBox.ignoreAllLogs();
 
 export default Scan;

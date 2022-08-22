@@ -38,7 +38,7 @@ const Onboarding = ({ navigation }) => {
 
                 <TouchableOpacity
                     style={[styles.shadow, { marginTop: SIZES.padding * 2, width: '70%', height: 50, alignItems: 'center', justifyContent: 'center' }]}
-                    onPress={() => navigation.navigate("Login")}
+                    onPress={() => navigation.navigate("Onboarding2")}
                     >
                     <LinearGradient
                         style={{ height: '100%', width: '100%', alignItems: 'center', justifyContent: 'center', borderRadius: 15 }}

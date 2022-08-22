@@ -52,7 +52,7 @@ import { color } from "react-native-reanimated";
             <Text
                 style = {{
                     textAlign: 'center',
-                    color: "red",
+                    color: COLORS.darkLime ,
                     ...FONTS.h2
                 }}
             >

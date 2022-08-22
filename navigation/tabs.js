@@ -1,14 +1,19 @@
 import React from "react";
 import {
     View,
+    Image,
+    TouchableOpacity,
+    StyleSheet
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { Home , Scan , Settings , Support } from "../screens/"
+import { Home , Scan , Settings ,} from "../screens/"
 import  {TabIcon} from "../Components"
-
+import {isIphoneX} from 'react-native-platform-helper'
 import {COLORS, icons} from "../constants/Index"
+import Notifications from "../screens/Notifications";
 
 const Tab = createBottomTabNavigator()
+
 
 const Tabs = () => {
     return (
@@ -23,7 +28,11 @@ const Tabs = () => {
                     backgroundcolor: COLORS.white,
                     borderTopColor: "transparent",
                 }
-            }}        
+            }}
+            
+            screenOptions= {{
+                headerShown : false
+             }}
         >
             <Tab.Screen
                 name="Home"
@@ -35,11 +44,11 @@ const Tabs = () => {
             />
 
               <Tab.Screen
-                name="Support"
-                component={Support}
+                name="Notifications"
+                component={Notifications}
                 options ={{
                     tabBarIcon : ({focused}) => <TabIcon focused = 
-                    {focused} icon = {icons.search}/>
+                    {focused} icon = {icons.bellfilled}/>
                 }}
             />
 
@@ -57,11 +66,14 @@ const Tabs = () => {
                 component={Settings}
                 options ={{
                     tabBarIcon : ({focused}) => <TabIcon focused = 
-                    {focused} icon = {icons.settings}/>
+                    {focused} icon = {icons.settingsfilled}/>
                 }}
             />
         </Tab.Navigator>
     )
 }
+
+
+
 
 export default Tabs;
