@@ -33,6 +33,7 @@ const movie_tickets = require('../assets/icons/movie_tickets.png');
 const flight_tickets = require('../assets/icons/flight_tickets.png');
 const bellfilled = require("../assets/icons/bellfilled.png");
 const settingsfilled = require("../assets/icons/settingsfilled.png");
+const correct = require("../assets/icons/correct.png")
 
 
 export default {
@@ -71,7 +72,8 @@ export default {
     movie_tickets,
     flight_tickets,
     bellfilled,
-    settingsfilled
+    settingsfilled,
+    correct
 
 
 
