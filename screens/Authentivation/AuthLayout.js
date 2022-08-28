@@ -4,6 +4,7 @@ import {
     Text,
     Image
 } from 'react-native';
+
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import {images, FONTS, SIZES, COLORS} from "../../constants/Index"

@@ -6,19 +6,21 @@ import {
     Image
 } from 'react-native';
 
-import {AuthLayout} from "../Authentivation/AuthLayout";
+import {AuthLayout} from "../";
 
 import {FONTS, SIZES, COLORS, icons } from "../../constants/Index";
 
-import FormInput from "../../Components/FormInput";
+import {FormInput} from '../../Components';
 
 
 
 const Login = () => {
 
-    const [email, setEmail] = React.useState("")
-    const [password, setPassword] = React.useState("")
-    const [emailError, setEmailError] = React.useState("")
+    const [email, setEmail] = React.useState ("")
+    const [password , setPassword] = React.useState ("")
+    const [emailError, setEmailError] = React.useState ("")
+
+    const [showPass, setShowPass] = React.useState ("")
     
     return (
 
@@ -37,7 +39,7 @@ const Login = () => {
             >
 
                 
-          {/* FormInput */}
+          {/* FormInput*/}
           <FormInput
                 label = "Email"
                 keyboardType = "email-address"
@@ -52,23 +54,30 @@ const Login = () => {
                     <View
                         style = {{
                             justifyContent : 'center'
-
                         }}
                     >
                         <Image
-                            source={icons.correct}
+                            source = {icons.correct}
                             style = {{
-                                height: 20,
-                                width:20,
-                                tintColor: COLORS.darkGreen
-
+                                height :20,
+                                width : 20,
+                                tintColor : COLORS.darkGreen
                             }}
-
                         />
                     </View>
                 }
-
           />
+
+        <FormInput 
+            label = "Password"
+            secureTextEntry={ !showPass}
+            autoCompleteType = "password"
+            CotainerStyle = {{
+                marginTop: SIZES.radius
+            }}
+            onChange = {(value) => setPassword(value)}
+        />
+
 
           {/* save me & Forgot Password */}
 
@@ -79,6 +88,8 @@ const Login = () => {
 
 
             </View>
+
+
         </AuthLayout>
 
     )

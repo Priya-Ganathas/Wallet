@@ -21,7 +21,7 @@ const FormInput = ({
     autoCapitalize = "none",
     errorMsg = ""
     }) => {
-        
+
     return (
         <View style = {{...containerStyle}} >
 
