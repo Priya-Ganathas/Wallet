@@ -23,20 +23,21 @@ export const COLORS = {
     white2: '#F9F9F9',
     black: "#020202",
     blue: "#4096FE",
-    gray: "#777777",
+    gray: "#4A4A4A",
     gray2: '#F8F8F8',
     lightGray: "#F5F6FB",
     lightGray2: '#757575',
+    lightGray3: '#EFF0F5',
+   
 
     transparentBlack1: 'rgba(2, 2, 2, 0.1)',
     transparentBlack3: 'rgba(2, 2, 2, 0.3)',
     transparentBlack5: 'rgba(2, 2, 2, 0.5)',
     transparentBlack7: 'rgba(2, 2, 2, 0.7)',
     transparentBlack9: 'rgba(2, 2, 2, 0.9)',
-
     transparentGray: 'rgba(77,77,77, 0.8)',
     transparentDarkGray: 'rgba(20,20,20, 0.9)',
-
+    transparentprimary: 'rgba(163, 226, 180, 1.0)',
     transparent: 'transparent',
 };
 export const SIZES = {
@@ -73,7 +74,7 @@ export const FONTS = {
     body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
     body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
     body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
-    pop1: { fontFamily: "Roboto-Black", fontSize: SIZES.h2, lineHeight: 30 },
+    pop1: { fontFamily: "Roboto-Black", fontSize: SIZES.h2, lineHeight: 30 , color: COLORS.black},
 };
 
 const appTheme = { COLORS, SIZES, FONTS };

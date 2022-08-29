@@ -34,7 +34,8 @@ const flight_tickets = require('../assets/icons/flight_tickets.png');
 const bellfilled = require("../assets/icons/bellfilled.png");
 const settingsfilled = require("../assets/icons/settingsfilled.png");
 const correct = require("../assets/icons/correct.png")
-
+const eye_close = require("../assets/icons/eye_close.png")
+const cancel = require("../assets/icons/cancel.png")
 
 export default {
     bookmark,
@@ -73,7 +74,9 @@ export default {
     flight_tickets,
     bellfilled,
     settingsfilled,
-    correct
+    correct,
+    eye_close,
+    cancel
 
 
 

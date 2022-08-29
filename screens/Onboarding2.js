@@ -16,6 +16,7 @@ import { COLORS , SIZES, FONTS, images} from "../constants/Index";
 import {CustomButton} from "../Components"
 
 
+
 const Onboarding2 = ({ navigation }) => {
         
     function renderHeader () {
@@ -96,25 +97,27 @@ return(
             <CustomButton
                   buttonText= "Login"
                   buttonContainerStyle={{
-                        paddingVertical: 18,
-                        borderRadius:20
+                        height :55,
+                        justifyContent : 'center',
+                        borderRadius:SIZES.radius,
                   }}
                   colors = {[COLORS.darkGreen,  COLORS.lime]}       
-                  onPress = { () => navigation.replace ("Login") }   
+                  onPress = { () => navigation.navigate ("Login") }   
             />   
 
         {/* SignUp*/}
             <CustomButton
                   buttonText= "Create an account"                 
                   buttonContainerStyle={{
+                    height :55,
                     marginTop: SIZES.radius,
-                    paddingVertical: 18,
-                    borderRadius:20,
+                    justifyContent : 'center',
+                    borderRadius:SIZES.radius,
                     borderColor :COLORS.darkLime,
                     borderWidth:1
                     }}
                   colors = {[]}       
-                  onPress = {() => navigation.replace ("SignUp") }   
+                  onPress = {() => navigation.navigate ("SignUp") }   
             />                  
 
        </View>

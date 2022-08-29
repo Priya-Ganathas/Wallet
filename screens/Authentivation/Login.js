@@ -10,18 +10,30 @@ import {AuthLayout} from "../";
 
 import {FONTS, SIZES, COLORS, icons } from "../../constants/Index";
 
-import {FormInput} from '../../Components';
+import {
+    FormInput,
+    CustomSwitch,
+    TextButton
+} from '../../Components';
 
+import {utils} from "../../utils"
 
+// import { ScreenStackHeaderLeftView } from 'react-native-screens';
 
-const Login = () => {
+const Login = ({ navigation }) => {
 
     const [email, setEmail] = React.useState ("")
     const [password , setPassword] = React.useState ("")
     const [emailError, setEmailError] = React.useState ("")
 
     const [showPass, setShowPass] = React.useState ("")
-    
+    const [saveMe, setSaveMe] = React.useState (false)
+
+
+    function isEnableSignIn () {
+        return email != "" && password != "" && emailError ==""
+    }
+   
     return (
 
         <AuthLayout
@@ -34,7 +46,7 @@ const Login = () => {
             <View
                 style = {{
                     flex :1,
-                    marginTop : SIZES.padding * 2
+                    marginTop : SIZES.padding * 0
                 }}
             >
 
@@ -46,6 +58,7 @@ const Login = () => {
                 autoCompleteType = "email"
                 onChange = {(value) => {
                     //validate email
+                    utils.validateEmail(value, setEmailError)
                     setEmail(value)
 
                 }}
@@ -57,11 +70,11 @@ const Login = () => {
                         }}
                     >
                         <Image
-                            source = {icons.correct}
+                            source = {email == "" || (email != "" && emailError == "") ? icons.correct : icons.cancel}
                             style = {{
                                 height :20,
                                 width : 20,
-                                tintColor : COLORS.darkGreen
+                                tintColor : email == "" ? COLORS.gray : (email != "" && emailError =="") ? COLORS.darkGreen : COLORS.red
                             }}
                         />
                     </View>
@@ -75,20 +88,100 @@ const Login = () => {
             CotainerStyle = {{
                 marginTop: SIZES.radius
             }}
-            onChange = {(value) => setPassword(value)}
+            onChange = {(value) => setPassword (value)}
+            appendComponent = {
+                <TouchableOpacity
+                    style = {{
+                        width: 40,
+                        alignItems : 'flex-end',
+                        justifyContent: 'center'
+                    }}
+                    onPress = {() => setShowPass (!showPass)}
+                >
+                    <Image
+                        source= {showPass ? icons.eye_close : icons.eye}
+                        style = {{
+                            height : 20,
+                            width : 20,
+                            tintColor : COLORS.gray
+                         }}
+                    />
+                </TouchableOpacity>
+            }
+
         />
 
 
           {/* save me & Forgot Password */}
+          <View 
+            style = {{
+                flexDirection : 'row',
+                marginTop : SIZES.radius,
+                justifyContent : 'space-between'
+            }}
+          >
+                <CustomSwitch 
+                    value = {saveMe}
+                    onChange = {(value) => setSaveMe(value)}
+                />
 
-
+                <TextButton 
+                    label= "Forgot Password ?"
+                    buttonContainerStyle= {{
+                        backgroundColor : null
+                    }}
+                    labelStyle = {{
+                        color : COLORS.gray,
+                        ...FONTS.body4
+                    }}
+                    onPress = {() => navigation.navigate ("ForgotPassword")  }
+                />  
+          </View>
           {/* Sign In */}
+          <TextButton 
+            label= "Sign In"
+            disabled = {isEnableSignIn() ? false : true}
+            buttonContainerStyle ={{
+                height : 55,
+                alignItems : 'center',
+                marginTop : SIZES.padding,
+                borderRadius :  SIZES.radius,
+                backgroundColor : isEnableSignIn() ? COLORS.primary : COLORS.transparentprimary
+            }}
+          />
 
           {/* Sign Up */}
+        <View 
+            style = {{
+                flexDirection : 'row',
+                marginTop : SIZES.radius,
+                justifyContent : 'center'
+            }}
+        >
+            <Text
+                style = {{
+                    color : COLORS.gray,
+                    ...FONTS.body3
+                }}
+            >
+                Don't have an account ?   
+            </Text>
 
+            <TextButton 
+                label= "Sign Up"
+                buttonContainerStyle= {{
+                    marginLeft :  4,
+                    backgroundColor : null
+                }}
+                labelStyle ={{
+                    color : COLORS.primary,
+                    ...FONTS.h3
+                }}
+                onPress = {() => navigation.navigate ("SignUp")}
+            />
+        </View>
 
             </View>
-
 
         </AuthLayout>
 

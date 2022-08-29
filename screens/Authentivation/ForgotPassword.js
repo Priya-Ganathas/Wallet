@@ -5,10 +5,11 @@ import {
     Text
 } from 'react-native';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ navigation }) => {
+    
     return (
         <View>
-            <Text>ForgotPassword</Text>
+            <Text>Forgot Password</Text>
         </View>
     )
 }

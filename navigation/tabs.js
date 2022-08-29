@@ -12,6 +12,7 @@ import {isIphoneX} from 'react-native-platform-helper'
 import {COLORS, icons} from "../constants/Index"
 import Notifications from "../screens/Notifications";
 
+
 const Tab = createBottomTabNavigator()
 
 

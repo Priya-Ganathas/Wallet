@@ -9,7 +9,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import {images, FONTS, SIZES, COLORS} from "../../constants/Index"
 
-const AuthLayout = ({ title, subtitle, titleContainerStyle, Children  }) => {
+const AuthLayout = ({ title, subtitle, titleContainerStyle, children  }) => {
     return (
         <View
             style = {{
@@ -59,7 +59,7 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, Children  }) => {
                 <Text
                     style = {{
                         textAlign: 'center',
-                        ...FONTS.pop1
+                        ...FONTS.pop1,
                     }}
                     
                 >
@@ -82,7 +82,7 @@ const AuthLayout = ({ title, subtitle, titleContainerStyle, Children  }) => {
 
             {/*Content / Children*/}
 
-              {Children}      
+              {children}      
 
 
 

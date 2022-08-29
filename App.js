@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login, SignUp, Home, Scan, Settings} from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Settings, ForgotPassword, Otp} from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -19,7 +19,7 @@ const App = () => {
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'login'}
+                initialRouteName={'Otp'}
             >
 
             {/* Screens */}
@@ -73,20 +73,24 @@ const App = () => {
                />
 
                 <Stack.Screen
-                    name="Settings"
-                    component={ "Settings"  }
-               />
-
-                {/* <Stack.Screen
-                    name="Settings"
-                    component={Tabs}
-               />  */}
-
-                <Stack.Screen
                     name="Scan"
                     component={Scan}
                 />
                 
+                <Stack.Screen
+                    name="ForgotPassword"
+                    component={ForgotPassword}
+                />
+
+                <Stack.Screen
+                    name="Otp"
+                    component={Otp}
+                />
+
+
+
+
+
             </Stack.Navigator>
         </NavigationContainer>
     )

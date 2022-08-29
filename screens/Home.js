@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     FlatList
 } from 'react-native';
+
 import LinearGradient from 'react-native-linear-gradient';
 
 import { images, icons, COLORS, FONTS, SIZES } from '../constants/Index';

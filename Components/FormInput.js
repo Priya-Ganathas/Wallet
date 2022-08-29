@@ -49,7 +49,7 @@ const FormInput = ({
                     paddingHorizontal: SIZES.padding,
                     marginTop: SIZES.base,
                     borderRadius: SIZES.radius,
-                    backgroundColor : COLORS.lightGray2
+                    backgroundColor : COLORS.lightGray3
 
                 }}
             >
@@ -61,7 +61,7 @@ const FormInput = ({
                         ...inputstyle
                     }}
                     placeholder = {placeholder}
-                    placeholderTextColor = {COLORS.gray}
+                    placeholderTextColor = {COLORS.lightGray3}
                     secureTextEntry = {secureTextEntry}
                     keyboardType = {keyboardType}
                     autoCompleteType = {autoCompleteType}

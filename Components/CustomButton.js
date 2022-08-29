@@ -4,10 +4,9 @@ import {
         Text
  } from "react-native";
 
- import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import { color } from "react-native-reanimated";
-
- import {  COLORS, FONTS } from "../constants/Index";
+import {  COLORS, FONTS } from "../constants/Index";
 
  const CustomButton = ({buttonText, buttonContainerStyle, colors, onPress}) => {
 
@@ -30,7 +29,7 @@ import { color } from "react-native-reanimated";
                     style = {{
                         textAlign: 'center',
                         color: COLORS.white,
-                        ...FONTS.h2
+                        ...FONTS.h3
                     }}
                 >
                     {buttonText}
@@ -53,7 +52,7 @@ import { color } from "react-native-reanimated";
                 style = {{
                     textAlign: 'center',
                     color: COLORS.darkLime ,
-                    ...FONTS.h2
+                    ...FONTS.h3
                 }}
             >
                 {buttonText}
