@@ -46,7 +46,7 @@ const SignUp = ({ navigation }) => {
         <View
         style = {{
             flex : 1,
-            marginTop :SIZES.padding
+            marginTop :SIZES.padding * 1
         }}>
 
         {/* FormInput*/}

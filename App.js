@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Settings, ForgotPassword, Otp} from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp, CustomDrawer } from "./screens";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -19,36 +19,14 @@ const App = () => {
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'Otp'}
+                initialRouteName={'Home'}
             >
 
             {/* Screens */}
 
-            <Stack.Screen
+                <Stack.Screen
                     name="Onboarding"
                     component={Onboarding}
-                    options={{
-                        title: null,
-                        headerStyle: {
-                            backgroundColor: COLORS.white
-                        },
-                        headerLeft: null,
-                        headerRight: () => (
-                            <TouchableOpacity
-                                style={{ marginRight: SIZES.padding }}
-                                onPress={() => console.log("Pressed")}
-                            >
-                                {/* <Image
-                                    source={icons.barMenu}
-                                    resizeMode="contain"
-                                    style={{
-                                        width: 25,
-                                        height: 25,
-                                    }} */}
-                                />
-                            </TouchableOpacity>
-                        ),
-                    }}
                 />
 
                 <Stack.Screen
@@ -66,10 +44,10 @@ const App = () => {
                     component={Login}
                />
 
-
                 <Stack.Screen
                     name="Home"
-                    component={Tabs}
+                    component={Tabs} 
+                    // component={CustomDrawer}
                />
 
                 <Stack.Screen
@@ -87,6 +65,15 @@ const App = () => {
                     component={Otp}
                 />
 
+                <Stack.Screen
+                    name="Expense"
+                    component={Expense}
+                />
+
+                <Stack.Screen
+                    name="CustomDrawer"
+                    component={CustomDrawer}
+                /> 
 
 
 
@@ -95,8 +82,5 @@ const App = () => {
         </NavigationContainer>
     )
 }
-// export default () => {
-//     return <App />;
-// };
 
 export default App;

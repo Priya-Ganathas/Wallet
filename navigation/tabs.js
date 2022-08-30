@@ -6,7 +6,7 @@ import {
     StyleSheet
 } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { Home , Scan , Settings ,} from "../screens/"
+import { Home , Scan , Expense} from "../screens/"
 import  {TabIcon} from "../Components"
 import {isIphoneX} from 'react-native-platform-helper'
 import {COLORS, icons} from "../constants/Index"
@@ -26,8 +26,8 @@ const Tabs = () => {
                     left: 0,
                     left: 0,
                     elevation: 0,
-                    backgroundcolor: COLORS.white,
-                    borderTopColor: "transparent",
+                    backgroundcolor: COLORS.darkLime,
+                    // borderTopColor: "transparent",
                 }
             }}
             
@@ -63,11 +63,11 @@ const Tabs = () => {
             />
         
             <Tab.Screen
-                name="Settings"
-                component={Settings}
+                name="Expense"
+                component={Expense}
                 options ={{
                     tabBarIcon : ({focused}) => <TabIcon focused = 
-                    {focused} icon = {icons.settingsfilled}/>
+                    {focused} icon = {icons.expense}/>
                 }}
             />
         </Tab.Navigator>

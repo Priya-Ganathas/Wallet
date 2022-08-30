@@ -18,6 +18,8 @@ export const COLORS = {
     lightpurple: "#F3EFFF",
     yellow: "#FFC664",
     lightyellow: "#FFF9EC",
+    peach: '#FF615F',
+    darkgreen1: '#008159',
 
     white: "#fff",
     white2: '#F9F9F9',

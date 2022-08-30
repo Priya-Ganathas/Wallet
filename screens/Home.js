@@ -21,7 +21,7 @@ const OptionItem = ({ bgColor, icon, label, onPress }) => {
         >
             <View style={[styles.shadow, { width: 60, height: 60 }]}>
                 <LinearGradient
-                    style={[{ flex: 1, alignItems: 'center', justifyContent: 'center', borderRadius: 15, backgroundColor: 'red' }]}
+                    style={[{ flex: 1, alignItems: 'center', justifyContent: 'center', borderRadius: 30, backgroundColor: 'red' }]}
                     colors={bgColor}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 0, y: 1 }}
@@ -37,7 +37,7 @@ const OptionItem = ({ bgColor, icon, label, onPress }) => {
                     />
                 </LinearGradient>
             </View>
-            <Text style={{ marginTop: SIZES.base, color: COLORS.gray, ...FONTS.body3 }}>{label}</Text>
+            <Text style={{ marginTop: SIZES.base, color: COLORS.gray, ...FONTS.h5}}>{label}</Text>
         </TouchableOpacity>
     )
 }
@@ -45,35 +45,38 @@ const OptionItem = ({ bgColor, icon, label, onPress }) => {
 const Home = ({ navigation }) => {
     // Dummy Data
     const specialPromoData = [
-    
-        {
-            id: 2,
-            name: "Power Cut",
-            img: images.PowerCut,
-        },
-        {
-            id: 2,
-            name: "Power Cut",
-            img: images.PowerCut,
-        },
-        {
-            id: 2,
-            name: "Power Cut",
-            img: images.PowerCut,
-        },
+        
         {
             id: 3,
-            name: "Power Cut",
-            img: images.PowerCut,
+            name: "Airtel",
+            img: images.Airtel,
+        },
+
+        {
+            id: 2,
+            name: "Mobitel",
+            img: images.Mobitel,
         },
         {
-            id: 4,
-            name: "Power Cut",
-            img: images.PowerCut,
+            id: 2,
+            name: "Hutch",
+            img: images.Hutch,
         },
+      
+        {
+            id: 4,
+            name: "Etisalat",
+            img: images.Etisalat,
+        },
+
+        {
+            id: 2,
+            name: "Dialog",
+            img: images.PowerDialogCut,
+        },
+
        ];
     
-
     const [specialPromos, setSpecialPromos] = React.useState(specialPromoData)     
 
     function renderspecialPromoData(item, index) {
@@ -86,25 +89,48 @@ const Home = ({ navigation }) => {
         return (
             <TouchableOpacity
                 style={{ justifyContent: 'center', marginHorizontal: SIZES.base, ...specialPromoDataStyle }}
-                onPress={() => { navigation.navigate("specialPromoDataDetail") }}
+                onPress = {() => navigation.navigate ("specialPromoDataDetail") } 
             >
                 <Image
                     source={item.img}
                     resizeMode="cover"
                     style={{
-                        width: SIZES.width * 0.28,
-                        height: '82%',
+                        width: SIZES.width * 0.5,
+                        height: '70%',
                         borderRadius: 15
                     }}
                 />
 
-                <Text style={{ marginTop: SIZES.base / 2, ...FONTS.h4 }}>{item.name}</Text>
+                <Text style={{ marginTop: SIZES.base / 2, ...FONTS.h5 }}>{item.name}</Text>
             </TouchableOpacity>
         )
     }
 
-   return (
-        <View style={styles.container}>
+   return (            
+
+        <View style={styles.container}>  
+            <TouchableOpacity
+            style={{
+                    flexDirection: 'row',
+                    alignItems: "center",
+                    marginTop: SIZES.padding * 1,
+                    paddingHorizontal: SIZES.padding * 1
+                }}
+                onPress={() => navigation.navigate("CustomDrawer")}
+            >
+                <Image
+                    source={icons.bar_menu_icon}
+                    resizeMode="contain"
+                    style={{
+                        width: 20,
+                        height: 20,
+                        tintColor: COLORS.black
+                    }}   
+                />
+                <Text style={{ marginLeft: SIZES.padding * 0.5, color: COLORS.gray, ...FONTS.h3 }}> Menu </Text>
+            </TouchableOpacity>
+
+
             {/* Banner */}
             <View style={{ flex: 1, marginTop: SIZES.base, paddingHorizontal: SIZES.padding, }}>
                    <Image
@@ -115,14 +141,16 @@ const Home = ({ navigation }) => {
                         width: "100%",
                         height: "80%",
                         borderRadius: 15,
+                        marginTop : SIZES.padding * -1 
                     }}
                 />
             </View>
-
+   
+   
             {/* Options */}
 
             <View style={{ flex: 1, justifyContent: 'center' }}>     
-                <Text style={{ marginTop: SIZES.base, marginHorizontal: SIZES.padding, ...FONTS.h2 }}>Features</Text>
+                <Text style={{ marginTop: SIZES.padding * -2 , marginHorizontal: SIZES.padding, ...FONTS.body3, color: COLORS.black }}> Features </Text>
                 <View style={{ flexDirection: 'row', marginTop: SIZES.padding, paddingHorizontal: SIZES.base }}>
                     <OptionItem
                         icon={icons.reload}
@@ -181,7 +209,7 @@ const Home = ({ navigation }) => {
             {/* specialPromoData */}
             <View style={{ 
                 flex: 1, }}>
-                <Text style={{ marginTop: 30, marginHorizontal: SIZES.padding, ...FONTS.h2, marginBottom:15 }}>Special Promos</Text>
+                <Text style={{  marginTop: SIZES.padding * 0, marginHorizontal: SIZES.padding, ...FONTS.body3, marginBottom:15, color: COLORS.black}}>Special Promos</Text>
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
@@ -205,8 +233,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 2,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
+        // shadowOpacity: 0.25,
+        // shadowRadius: 3.84,
 
         elevation: 5,
     }

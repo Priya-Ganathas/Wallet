@@ -18,8 +18,6 @@ import {
 
 import {utils} from "../../utils"
 
-// import { ScreenStackHeaderLeftView } from 'react-native-screens';
-
 const Login = ({ navigation }) => {
 
     const [email, setEmail] = React.useState ("")
@@ -40,13 +38,16 @@ const Login = ({ navigation }) => {
 
             title= "Let's Sign You In"
             subtitle= "Welcome Back, you've been missed"
+            titleContainerStyle = {{
+                marginTop :SIZES.padding * 0
+            }}
             
         >
 
             <View
                 style = {{
                     flex :1,
-                    marginTop : SIZES.padding * 0
+                    marginTop : SIZES.padding * 1
                 }}
             >
 
@@ -148,6 +149,7 @@ const Login = ({ navigation }) => {
                 borderRadius :  SIZES.radius,
                 backgroundColor : isEnableSignIn() ? COLORS.primary : COLORS.transparentprimary
             }}
+            onPress = {() => navigation.navigate ("Home")  }
           />
 
           {/* Sign Up */}

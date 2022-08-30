@@ -29,7 +29,7 @@ const CustomSwitch = ({value, onChange}) => {
                         <View
                             style = {{
                                 ...styles.dot, 
-                                backgroundColor : value ? COLORS.white : COLORS.gray,
+                                backgroundColor : value ? COLORS.white : COLORS.gray, 
                             }}
                         />
                     </View>
@@ -72,8 +72,8 @@ const styles = StyleSheet.create ({
         paddingLeft : 2,
         justifyContent : 'center',
         borderwidth :1,
+        borderRadius : 10,
         borderColor : COLORS.gray,
-        borderRadius : 10
     },
     dot: {
         width :12,

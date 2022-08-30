@@ -22,18 +22,18 @@ const Onboarding = ({ navigation }) => {
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Image
                     source={images.onboardingImage}
-                    resizeMode="contain"
+                    resizeMode="cover"
                     style={{
-                        width: '200%',
-                        height: '200%',
+                        width: '100%',
+                        height: '100%',
                     }}
                 />
             </View>
 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <View style={{ alignItems: 'center', marginHorizontal: SIZES.padding }}>
-                    <Text style={{ ...FONTS.h1, color: COLORS.darkGreen}}>FinTech E-Wallet </Text>
-                    <Text style={{ color: COLORS.grey, marginTop: SIZES.padding, textAlign: 'center', ...FONTS.body3 }}>Easy solutions for payment/billing, insurtech, money transfer/remittance, mortgage/real estate, and others (lending, capital market, wealth management).</Text>
+                    <Text style={{ ...FONTS.h1, color: COLORS.primary}}>FinTech E-Wallet </Text>
+                    <Text style={{ color: COLORS.gray, marginTop: SIZES.padding, textAlign: 'center', ...FONTS.body3 }}>Easy solutions for payment/billing, insurtech, money transfer/remittance, mortgage/real estate, and others (lending, capital market, wealth management).</Text>
                 </View>
 
                 <TouchableOpacity
