@@ -11,9 +11,9 @@ import {
 
 import LinearGradient from "react-native-linear-gradient";
 
-import { COLORS , SIZES, FONTS, images} from "../constants/Index";
+import { COLORS , SIZES, FONTS, images} from "../../constants/Index";
 
-import {CustomButton} from "../Components"
+import {CustomButton} from "../../Components"
 
 
 

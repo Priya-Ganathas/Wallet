@@ -12,7 +12,7 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient';
 
-import { images, COLORS, FONTS, SIZES } from '../constants/Index';
+import { images, COLORS, FONTS, SIZES } from '../../constants/Index';
 
 const Onboarding = ({ navigation }) => {
  
