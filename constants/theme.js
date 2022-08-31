@@ -21,6 +21,10 @@ export const COLORS = {
     peach: '#FF615F',
     darkgreen1: '#008159',
 
+    //games
+    purple2 : "#AD40AF",
+    peacockblue : "#0aada8",
+
     white: "#fff",
     white2: '#F9F9F9',
     black: "#020202",
@@ -77,6 +81,8 @@ export const FONTS = {
     body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
     body5: { fontFamily: "Roboto-Regular", fontSize: SIZES.body5, lineHeight: 22 },
     pop1: { fontFamily: "Roboto-Black", fontSize: SIZES.h2, lineHeight: 30 , color: COLORS.black},
+    pop2: { fontFamily: "Roboto-Medium", fontSize: SIZES.h3 },
+  
 };
 
 const appTheme = { COLORS, SIZES, FONTS };

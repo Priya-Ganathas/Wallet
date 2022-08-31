@@ -95,9 +95,10 @@ const Home = ({ navigation }) => {
                     source={item.img}
                     resizeMode="cover"
                     style={{
-                        width: SIZES.width * 0.5,
-                        height: '70%',
+                        width: 85,
+                        height: '60%',
                         borderRadius: 15
+                    
                     }}
                 />
 
@@ -109,7 +110,7 @@ const Home = ({ navigation }) => {
    return (            
 
         <View style={styles.container}>  
-            <TouchableOpacity
+            {/* <TouchableOpacity
             style={{
                     flexDirection: 'row',
                     alignItems: "center",
@@ -128,7 +129,7 @@ const Home = ({ navigation }) => {
                     }}   
                 />
                 <Text style={{ marginLeft: SIZES.padding * 0.5, color: COLORS.gray, ...FONTS.h3 }}> Menu </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
 
             {/* Banner */}
@@ -141,7 +142,7 @@ const Home = ({ navigation }) => {
                         width: "100%",
                         height: "80%",
                         borderRadius: 15,
-                        marginTop : SIZES.padding * -1 
+                        marginTop : SIZES.padding * -0.7 
                     }}
                 />
             </View>
@@ -183,19 +184,19 @@ const Home = ({ navigation }) => {
                         icon={icons.bill}
                         bgColor={['#ffc465', '#ff9c5f']}
                         label="Bill"
-                        onPress={() => { console.log("Bill") }}
+                        onPress={() => navigation.navigate("Bill")}
                     />
                     <OptionItem
                         icon={icons.game}
                         bgColor={['#7cf1fb', '#4ebefd']}
                         label="Game"
-                        onPress={() => { console.log("Game") }}
+                        onPress={() => navigation.navigate("Game") }
                     />
                     <OptionItem
                         icon={icons.flight_tickets}
                         bgColor={['#7be993', '#46caaf']}
                         label="Flight"
-                        onPress={() => { console.log("Tickets") }}
+                        onPress={() => navigation.navigate("Flight") }
                     />
                     <OptionItem
                         icon={icons.more}

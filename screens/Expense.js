@@ -77,7 +77,7 @@ const Expense = ({ navigation }) => {
                     id: 5,
                     title: "Vitamins",
                     description: "Vitamin",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04 Pharmacy",
                     total: 25.00,
                     status: pendingStatus,
                 },
@@ -86,7 +86,7 @@ const Expense = ({ navigation }) => {
                     id: 6,
                     title: "Protein powder",
                     description: "Protein",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04' Pharmacy",
                     total: 50.00,
                     status: confirmStatus,
                 },
@@ -103,7 +103,7 @@ const Expense = ({ navigation }) => {
                     id: 7,
                     title: "Toys",
                     description: "toys",
-                    location: "ByProgrammers' Toy Store",
+                    location: "Colombo - 04' Toy Store",
                     total: 25.00,
                     status: confirmStatus,
                 },
@@ -111,7 +111,7 @@ const Expense = ({ navigation }) => {
                     id: 8,
                     title: "Baby Car Seat",
                     description: "Baby Car Seat",
-                    location: "ByProgrammers' Baby Care Store",
+                    location: "Colombo - 04' Baby Care Store",
                     total: 100.00,
                     status: pendingStatus,
                 },
@@ -119,7 +119,7 @@ const Expense = ({ navigation }) => {
                     id: 9,
                     title: "Pampers",
                     description: "Pampers",
-                    location: "ByProgrammers' Supermarket",
+                    location: "Colombo - 04s' Supermarket",
                     total: 100.00,
                     status: pendingStatus,
                 },
@@ -127,7 +127,7 @@ const Expense = ({ navigation }) => {
                     id: 10,
                     title: "Baby T-Shirt",
                     description: "T-Shirt",
-                    location: "ByProgrammers' Fashion Store",
+                    location: "Colombo - 04' Fashion Store",
                     total: 20.00,
                     status: pendingStatus,
                 },
@@ -143,7 +143,7 @@ const Expense = ({ navigation }) => {
                     id: 11,
                     title: "Skin Care product",
                     description: "skin care",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04' Pharmacy",
                     total: 10.00,
                     status: pendingStatus,
                 },
@@ -151,7 +151,7 @@ const Expense = ({ navigation }) => {
                     id: 12,
                     title: "Lotion",
                     description: "Lotion",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04' Pharmacy",
                     total: 50.00,
                     status: confirmStatus,
                 },
@@ -159,7 +159,7 @@ const Expense = ({ navigation }) => {
                     id: 13,
                     title: "Face Mask",
                     description: "Face Mask",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04' Pharmacy",
                     total: 50.00,
                     status: pendingStatus,
                 },
@@ -167,7 +167,7 @@ const Expense = ({ navigation }) => {
                     id: 14,
                     title: "Sunscreen cream",
                     description: "Sunscreen cream",
-                    location: "ByProgrammers' Pharmacy",
+                    location: "Colombo - 04' Pharmacy",
                     total: 50.00,
                     status: pendingStatus,
                 },
@@ -183,7 +183,7 @@ const Expense = ({ navigation }) => {
                     id: 15,
                     title: "Gym Membership",
                     description: "Monthly Fee",
-                    location: "ByProgrammers' Gym",
+                    location: "Colombo - 04' Gym",
                     total: 45.00,
                     status: pendingStatus,
                 },
@@ -191,7 +191,7 @@ const Expense = ({ navigation }) => {
                     id: 16,
                     title: "Gloves",
                     description: "Gym Equipment",
-                    location: "ByProgrammers' Gym",
+                    location: "Colombo - 04' Gym",
                     total: 15.00,
                     status: confirmStatus,
                 },
@@ -207,7 +207,7 @@ const Expense = ({ navigation }) => {
                     id: 17,
                     title: "T-Shirt",
                     description: "Plain Color T-Shirt",
-                    location: "ByProgrammers' Mall",
+                    location: "Colombo - 04' Mall",
                     total: 20.00,
                     status: pendingStatus,
                 },
@@ -215,7 +215,7 @@ const Expense = ({ navigation }) => {
                     id: 18,
                     title: "Jeans",
                     description: "Blue Jeans",
-                    location: "ByProgrammers' Mall",
+                    location: "Colombo - 04' Mall",
                     total: 50.00,
                     status: confirmStatus,
                 },
@@ -230,51 +230,51 @@ const Expense = ({ navigation }) => {
     const [selectedCategory, setSelectedCategory] = React.useState(null)
     const [showMoreToggle, setShowMoreToggle] = React.useState(false)
 
-    function renderNavBar () {
-        return (
-            <View
-                style={{
-                    flexDirection: 'row',
-                    height: 40,
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-end',
-                    paddingHorizontal: SIZES.padding,
-                    backgroundColor: COLORS.white,
-                }}
-            >
-                <TouchableOpacity
-                     style={{ justifyContent: 'center', alignItems: 'flex-end', width: 20 }}
-                     onPress={() => navigation.navigate('Home')}
-                >
-                    <Image 
-                        source = {icons.back}
-                        style = {{
-                            width :30,
-                            height :20,
-                            tintColor : COLORS.black
-                        }}
-                    />
-                </TouchableOpacity>
+    // function renderNavBar () {
+    //     return (
+    //         <View
+    //             style={{
+    //                 flexDirection: 'row',
+    //                 height: 40,
+    //                 justifyContent: 'space-between',
+    //                 alignItems: 'flex-end',
+    //                 paddingHorizontal: SIZES.padding,
+    //                 backgroundColor: COLORS.white,
+    //             }}
+    //         >
+    //             <TouchableOpacity
+    //                  style={{ justifyContent: 'center', alignItems: 'flex-end', width: 20 }}
+    //                  onPress={() => navigation.navigate('Home')}
+    //             >
+    //                 <Image 
+    //                     source = {icons.back}
+    //                     style = {{
+    //                         width :30,
+    //                         height :20,
+    //                         tintColor : COLORS.black
+    //                     }}
+    //                 />
+    //             </TouchableOpacity>
                    
                     
-                <TouchableOpacity
-                     style={{ justifyContent: 'center', alignItems: 'flex-end', width: 50 }}
-                     onPress={() => console.log('More')}
-                >
-                    <Image 
-                        source = {icons.more_icon}
-                        style = {{
-                            width :30,
-                            height :30,
-                            tintColor : COLORS.black
-                        }}
-                    />
-                </TouchableOpacity>
+    //             <TouchableOpacity
+    //                  style={{ justifyContent: 'center', alignItems: 'flex-end', width: 50 }}
+    //                  onPress={() => console.log('More')}
+    //             >
+    //                 <Image 
+    //                     source = {icons.more_icon}
+    //                     style = {{
+    //                         width :30,
+    //                         height :30,
+    //                         tintColor : COLORS.black
+    //                     }}
+    //                 />
+    //             </TouchableOpacity>
 
-            </View>
-        )
+    //         </View>
+    //     )
 
-    }
+    // }
 
     function renderHeader() {
         return (
@@ -305,7 +305,7 @@ const Expense = ({ navigation }) => {
 
                     <View style={{ marginLeft: SIZES.padding }}>
                         <Text style={{ color: COLORS.primary, ...FONTS.h3 }}>30 Aug, 2022</Text>
-                        <Text style={{ ...FONTS.body3, color: COLORS.darkgray }}>18% more than last month</Text>
+                        <Text style={{ ...FONTS.body3, color: COLORS.darkgray }}>45% more than last month</Text>
                     </View>
                 </View>
             </View>
@@ -720,7 +720,7 @@ const Expense = ({ navigation }) => {
                 }}     
         >
             {/* Nav Bar section  */}
-            {renderNavBar()}
+            {/* {renderNavBar()} */}
 
             {/* Header section */}
             {renderHeader()}

@@ -1,8 +1,8 @@
 diff --git a/node_modules/react-native/index.js b/node_modules/react-native/index.js
-index d59ba34..84d3af3 100644
+index d59ba34..ee713e6 100644
 --- a/node_modules/react-native/index.js
 +++ b/node_modules/react-native/index.js
-@@ -434,34 +434,57 @@ module.exports = {
+@@ -434,34 +434,55 @@ module.exports = {
        );
    },
    // Deprecated Prop Types
@@ -63,7 +63,7 @@ index d59ba34..84d3af3 100644
 +  //   );
 +  // },
 +
-+// Deprecated Prop Types
++// Deprecated Prop Types //Priya
 +get ColorPropType(): $FlowFixMe {
 +  console.warn('');
 +  return require('deprecated-react-native-prop-types').ColorPropType;
@@ -83,8 +83,6 @@ index d59ba34..84d3af3 100644
 +  console.warn('');
 +  return require('deprecated-react-native-prop-types').ViewPropTypes;
 +},
-+
-+
  };
  
  if (__DEV__) {

@@ -15,8 +15,6 @@ import { COLORS , SIZES, FONTS, images} from "../../constants/Index";
 
 import {CustomButton} from "../../Components"
 
-
-
 const Onboarding2 = ({ navigation }) => {
         
     function renderHeader () {

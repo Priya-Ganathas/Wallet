@@ -21,7 +21,7 @@ const specialPromoDataDetail = ({ navigation }) => {
         >
             <Text>Support</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate("Settings")}
+                onPress={() => navigation.navigate("SettinspecialPromoDataDetail")}
             >
                 <Text>priya</Text>
             </TouchableOpacity>
