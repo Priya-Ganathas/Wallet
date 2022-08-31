@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp, CustomDrawer,Bill, Game ,Flight} from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp,Bill, Game ,Flight} from "./screens";
 
 // import {Bill} from "./screens";
 
@@ -73,10 +73,10 @@ const App = () => {
                     component={Expense}
                 />
 
-                <Stack.Screen
+                {/* <Stack.Screen
                     name="CustomDrawer"
                     component={CustomDrawer}
-                /> 
+                />  */}
 
                 <Stack.Screen
                     name="Bill"

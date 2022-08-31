@@ -15,7 +15,7 @@ import ForgotPassword from "./Authentivation/ForgotPassword"
 // import PaymentGateway from "./Payment/PaymentGateway"
 
 
-import CustomDrawer from "./CustomDrawer"
+// import CustomDrawer from "./CustomDrawer"
 
 //HomeFeatures
 import Bill from "./HomeFeatures/Bill";
@@ -37,7 +37,7 @@ export {
     AuthLayout,
     // PaymentGateway,
 
-    CustomDrawer,
+    // CustomDrawer,
 
     Bill,
     Game,
