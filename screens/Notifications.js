@@ -1,33 +1,15 @@
 import React from 'react';
-import {
-    View,
-    Text,
-    TouchableOpacity
-} from 'react-native';
+import PushNotifications from '../utils/PushNotifications';
+import { View } from 'react-native';
 
 const Notifications = ({ navigation }) => {
-    return (
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            <Text>Support</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate("Notifications")}
-            >
-                <Text>priya</Text>
-            </TouchableOpacity>
-        </View>
-    )
+
+return (
+  <View>
+    <PushNotifications/>
+  </View>
+)
+
 }
 
 export default Notifications;
-
-
-
-
-
-

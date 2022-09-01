@@ -1,8 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp,Bill, Game ,Flight} from "./screens";
-
-// import {Bill} from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp,Bill, Game ,Flight, CustomMenu, Notifications} from "./screens";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -10,19 +8,24 @@ import { NavigationContainer } from '@react-navigation/native';
 import Tabs from "./navigation/tabs";
 
 import { icons, COLORS, SIZES } from './constants/Index';
+import { useAccordionButton } from 'react-bootstrap';
 
 console.disableYellowBox = true;
 
 const Stack = createStackNavigator();
 
 const App = () => {
+    // useEffect(() => {
+    //     requestUserPermission()
+    // },[])
+
     return (
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'Onboarding'}
+                initialRouteName={'Home'}
             >
 
             {/* Screens */}
@@ -73,15 +76,21 @@ const App = () => {
                     component={Expense}
                 />
 
-                {/* <Stack.Screen
-                    name="CustomDrawer"
-                    component={CustomDrawer}
-                />  */}
+                <Stack.Screen
+                    name="CustomMenu"
+                    component={CustomMenu}
+                /> 
 
                 <Stack.Screen
                     name="Bill"
                     component={Bill}
-                /> 
+
+                />
+
+                <Stack.Screen
+                    name="Notifications"
+                    component={Notifications}
+                />  
 
                 <Stack.Screen
                     name="Game"

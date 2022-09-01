@@ -4,6 +4,8 @@ import Home from "./Home";
 import Expense from "./Expense";
 import Scan from "./Scan";
 import Support from "./Notifications";
+import CustomMenu from "./CustomMenu";
+import Notifications from "./Notifications";
 // import specialPromoDataDetail from "./Features/specialPromoDataDetail";
 
 //Authentication
@@ -14,8 +16,6 @@ import Otp from "./Authentivation/Otp"
 import ForgotPassword from "./Authentivation/ForgotPassword"
 // import PaymentGateway from "./Payment/PaymentGateway"
 
-
-// import CustomDrawer from "./CustomDrawer"
 
 //HomeFeatures
 import Bill from "./HomeFeatures/Bill";
@@ -31,6 +31,8 @@ export {
     Expense,
     Scan,
     Support,
+    CustomMenu,
+    Notifications,
     // specialPromoDataDetail,
     Otp,
     ForgotPassword,

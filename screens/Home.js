@@ -6,7 +6,8 @@ import {
     Image,
     Text,
     TouchableOpacity,
-    FlatList
+    FlatList,
+    Animated
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -47,7 +48,7 @@ const Home = ({ navigation }) => {
     const specialPromoData = [
         
         {
-            id: 3,
+            id: 1,
             name: "Airtel",
             img: images.Airtel,
         },
@@ -58,7 +59,7 @@ const Home = ({ navigation }) => {
             img: images.Mobitel,
         },
         {
-            id: 2,
+            id: 3,
             name: "Hutch",
             img: images.Hutch,
         },
@@ -70,7 +71,7 @@ const Home = ({ navigation }) => {
         },
 
         {
-            id: 2,
+            id: 5,
             name: "Dialog",
             img: images.PowerDialogCut,
         },
@@ -110,14 +111,16 @@ const Home = ({ navigation }) => {
    return (            
 
         <View style={styles.container}>  
-            {/* <TouchableOpacity
+
+        <Animated.View>
+            <TouchableOpacity
             style={{
                     flexDirection: 'row',
                     alignItems: "center",
                     marginTop: SIZES.padding * 1,
                     paddingHorizontal: SIZES.padding * 1
                 }}
-                onPress={() => navigation.navigate("CustomDrawer")}
+                onPress={() => navigation.navigate("CustomMenu")}
             >
                 <Image
                     source={icons.bar_menu_icon}
@@ -128,9 +131,9 @@ const Home = ({ navigation }) => {
                         tintColor: COLORS.black
                     }}   
                 />
-                <Text style={{ marginLeft: SIZES.padding * 0.5, color: COLORS.gray, ...FONTS.h3 }}> Menu </Text>
-            </TouchableOpacity> */}
-
+                <Text style={{ marginLeft: SIZES.padding * 0.5, color: COLORS.gray, ...FONTS.h3, fontWeight:'bold'}}> Menu </Text>
+            </TouchableOpacity>
+        </Animated.View>
 
             {/* Banner */}
             <View style={{ flex: 1, marginTop: SIZES.base, paddingHorizontal: SIZES.padding, }}>
