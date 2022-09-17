@@ -9,6 +9,7 @@ export const COLORS = {
     darkLime: "#1A8871",
     lightLime: "#BBD6C5",
     lime: "#2AD699",
+    lime1: "#5ED0A8",
     lightGreen: "#E7F9EF",
     lightGreen1: "#8EbCA0",
     emerald: "#2BC978",
@@ -19,7 +20,10 @@ export const COLORS = {
     yellow: "#FFC664",
     lightyellow: "#FFF9EC",
     peach: '#FF615F',
+    peach1: '#932D2B',
     darkgreen1: '#008159',
+    darkgreen2: '#011B13',
+    darkblue: "#1C4980",
 
     //games
     purple2 : "#AD40AF",
@@ -52,6 +56,7 @@ export const SIZES = {
     font: 14,
     radius: 12,
     padding: 24,
+    SPACING:10,
 
     // font sizes
     largeTitle: 40,

@@ -166,7 +166,7 @@ const Home = ({ navigation }) => {
                         icon={icons.send}
                         bgColor={['#fddf90', '#fcda13']}
                         label="Send Money"
-                        onPress={() => { console.log("Send Money") }}
+                        onPress={() => navigation.navigate("SendMoney")}
                     />
                     <OptionItem
                         icon={icons.movie_tickets}

@@ -11,14 +11,18 @@ import {
 
 import { COLORS, SIZES, FONTS, icons, images } from '../constants/Index';
 
+import { onPartialLoad } from 'deprecated-react-native-prop-types/DeprecatedImagePropType';
+
 //Tab Icons
-import home from '../assets/icons/home.png';
-import search from '../assets/icons/search.png';
-import notifications from '../assets/icons//bell.png';
-import settings from '../assets/icons/settings.png';
-import logout from '../assets/icons/wallet.png';
-
-
+import FinancePRO from '../assets/icons/account.png';
+import Account from '../assets/icons/financepro.png';
+import notifications from '../assets/icons//bellfilled.png';
+import Privacy from '../assets/icons/privacy-policy.png';
+import Support from '../assets/icons/support.png';
+import Settings from '../assets/icons/settingsfilled.png';
+import FaceID from '../assets/icons/faceid.png';
+import Fingerprint from '../assets/icons/fingerprint.png';
+import logout from '../assets/icons/logout1.png';
 
 const CustomMenu = ({ navigation }) => {
 
@@ -27,10 +31,10 @@ const CustomMenu = ({ navigation }) => {
 
     return (
         <SafeAreaView
-            style={{ backgroundColor : COLORS.white, flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', padding: 5}} >
+            style={{ backgroundColor : COLORS.lime1, flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', padding: 5}} >
                 <View style = {{justifyContent: 'flex-end' , padding : 20}}>
                     <Image
-                        source={images.GoPremium}
+                        source={icons.profile}
                         style={{
                             width: 60,
                             height: 60,
@@ -41,7 +45,7 @@ const CustomMenu = ({ navigation }) => {
                     <Text style={{
                         fontSize: 20,
                         fontWeight: 'bold',
-                        color: COLORS.primary,
+                        color: COLORS.peach1,
                         marginTop: 15,
                         marginLeft : -10
                         }}>  Priya Ganathas  </Text>
@@ -49,7 +53,7 @@ const CustomMenu = ({ navigation }) => {
                     <TouchableOpacity>
                         <Text style={{
                             marginTop: 6,
-                            color: COLORS.primary,
+                            color: COLORS.peach1,
                             marginLeft : -7
                             }}>  View Profile  </Text>
                     </TouchableOpacity>
@@ -59,14 +63,14 @@ const CustomMenu = ({ navigation }) => {
                         {
                             //Tab Bar Buttons
                         }
-                     {TabButton(currentTab, setCurrentTab, "Finance PRO", home)}
-                     {TabButton(currentTab, setCurrentTab, "Account", search)}
+                     {TabButton(currentTab, setCurrentTab, "Finance PRO", FinancePRO)}
+                     {TabButton(currentTab, setCurrentTab, "Account", Account)}
                      {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
-                     {TabButton(currentTab, setCurrentTab, "Privacy Policy", settings)}
-                     {TabButton(currentTab, setCurrentTab, "Support", settings)}
-                     {TabButton(currentTab, setCurrentTab, "Settings", settings)}
-                     {TabButton(currentTab, setCurrentTab, "Use Face ID to Unlock", settings)}
-                     {TabButton(currentTab, setCurrentTab, "Use Fingerprint to Unlock", settings)}
+                     {TabButton(currentTab, setCurrentTab, "Privacy Policy", Privacy)}
+                     {TabButton(currentTab, setCurrentTab, "Support", Support)}
+                     {TabButton(currentTab, setCurrentTab, "Settings", Settings)}
+                     {TabButton(currentTab, setCurrentTab, "Use Face ID to Unlock", FaceID)}
+                     {TabButton(currentTab, setCurrentTab, "Use Fingerprint to Unlock", Fingerprint)}
                      </View>
                      
 
@@ -89,11 +93,12 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
 
         <TouchableOpacity onPress={() => { 
                  if (title == "LogOut") {
-                    // Do your Stuff...
+                    //............................................
                     } else {
                         setCurrentTab(title)
                     }
         }}>
+
         <View style = {{
             flexDirection : 'row',
             alignItems : 'center',

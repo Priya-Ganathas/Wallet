@@ -20,7 +20,9 @@ import ForgotPassword from "./Authentivation/ForgotPassword"
 //HomeFeatures
 import Bill from "./HomeFeatures/Bill";
 import Game from "./HomeFeatures/Game";
-import Flight from "./HomeFeatures/Flight";
+import SendMoney from "./HomeFeatures/SendMoney";
+import CardPayment from "./HomeFeatures/CardPayment";
+
 
 export {
     Onboarding,
@@ -43,7 +45,9 @@ export {
 
     Bill,
     Game,
-    Flight
+    SendMoney,
+    CardPayment
+    // Flight
 
 
 }

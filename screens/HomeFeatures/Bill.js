@@ -173,7 +173,8 @@ function renderBillItemList (){
                     borderRadius: 5,
                     backgroundColor: COLORS.white,
                     ...styles.shadow
-                }}             
+                }} 
+                onPress={() => { console.log("More") }}            
             >
 
                 <Image 
@@ -187,6 +188,7 @@ function renderBillItemList (){
                 />
             
                 <Text style={{ marginLeft: SIZES.base * 2.5, color: COLORS.gray, ...FONTS.h5 }} >{item.name}</Text>
+                
 
               
             </TouchableOpacity>
@@ -200,7 +202,7 @@ function renderBillItemList (){
                 <FlatList 
                 data = {BillItemsData}
                 renderItem = {renderBillItemList}
-                keyExtractor = {item => '${item.id1}'}
+                keyExtractor = {item => '${item.id}'}
                 numColumns={2}
                 />
             </View>

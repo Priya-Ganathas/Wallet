@@ -38,15 +38,7 @@ const Expense = ({ navigation }) => {
                     title: "Tuition Fee",
                     description: "Tuition fee",
                     location: "Colombo - 04",
-                    total: 100.00,
-                    status: pendingStatus
-                },
-                {
-                    id: 2,
-                    title: "Arduino",
-                    description: "Hardward",
-                    location: "Colombo - 06",
-                    total: 30.00,
+                    total: 1000.00,
                     status: pendingStatus
                 },
                 {
@@ -54,17 +46,9 @@ const Expense = ({ navigation }) => {
                     title: "Javascript Books",
                     description: "Javascript books",
                     location: "Colombo - 03",
-                    total: 20.00,
+                    total: 2000.00,
                     status: confirmStatus
                 },
-                {
-                    id: 4,
-                    title: "PHP Books",
-                    description: "PHP books",
-                    location: "Colombo - 05",
-                    total: 20.00,
-                    status: confirmStatus
-                }
             ],
         },
         {
@@ -78,7 +62,7 @@ const Expense = ({ navigation }) => {
                     title: "Vitamins",
                     description: "Vitamin",
                     location: "Colombo - 04 Pharmacy",
-                    total: 25.00,
+                    total: 2500.00,
                     status: pendingStatus,
                 },
 
@@ -87,7 +71,7 @@ const Expense = ({ navigation }) => {
                     title: "Protein powder",
                     description: "Protein",
                     location: "Colombo - 04' Pharmacy",
-                    total: 50.00,
+                    total: 5000.00,
                     status: confirmStatus,
                 },
 
@@ -104,7 +88,7 @@ const Expense = ({ navigation }) => {
                     title: "Toys",
                     description: "toys",
                     location: "Colombo - 04' Toy Store",
-                    total: 25.00,
+                    total: 2525.00,
                     status: confirmStatus,
                 },
                 {
@@ -112,23 +96,7 @@ const Expense = ({ navigation }) => {
                     title: "Baby Car Seat",
                     description: "Baby Car Seat",
                     location: "Colombo - 04' Baby Care Store",
-                    total: 100.00,
-                    status: pendingStatus,
-                },
-                {
-                    id: 9,
-                    title: "Pampers",
-                    description: "Pampers",
-                    location: "Colombo - 04s' Supermarket",
-                    total: 100.00,
-                    status: pendingStatus,
-                },
-                {
-                    id: 10,
-                    title: "Baby T-Shirt",
-                    description: "T-Shirt",
-                    location: "Colombo - 04' Fashion Store",
-                    total: 20.00,
+                    total: 1000.00,
                     status: pendingStatus,
                 },
             ],
@@ -144,7 +112,7 @@ const Expense = ({ navigation }) => {
                     title: "Skin Care product",
                     description: "skin care",
                     location: "Colombo - 04' Pharmacy",
-                    total: 10.00,
+                    total: 1500.00,
                     status: pendingStatus,
                 },
                 {
@@ -152,24 +120,8 @@ const Expense = ({ navigation }) => {
                     title: "Lotion",
                     description: "Lotion",
                     location: "Colombo - 04' Pharmacy",
-                    total: 50.00,
+                    total: 2750.00,
                     status: confirmStatus,
-                },
-                {
-                    id: 13,
-                    title: "Face Mask",
-                    description: "Face Mask",
-                    location: "Colombo - 04' Pharmacy",
-                    total: 50.00,
-                    status: pendingStatus,
-                },
-                {
-                    id: 14,
-                    title: "Sunscreen cream",
-                    description: "Sunscreen cream",
-                    location: "Colombo - 04' Pharmacy",
-                    total: 50.00,
-                    status: pendingStatus,
                 },
             ],
         },
@@ -184,7 +136,7 @@ const Expense = ({ navigation }) => {
                     title: "Gym Membership",
                     description: "Monthly Fee",
                     location: "Colombo - 04' Gym",
-                    total: 45.00,
+                    total: 5000.00,
                     status: pendingStatus,
                 },
                 {
@@ -192,7 +144,7 @@ const Expense = ({ navigation }) => {
                     title: "Gloves",
                     description: "Gym Equipment",
                     location: "Colombo - 04' Gym",
-                    total: 15.00,
+                    total: 15000.00,
                     status: confirmStatus,
                 },
             ],
@@ -208,7 +160,7 @@ const Expense = ({ navigation }) => {
                     title: "T-Shirt",
                     description: "Plain Color T-Shirt",
                     location: "Colombo - 04' Mall",
-                    total: 20.00,
+                    total: 2500.00,
                     status: pendingStatus,
                 },
                 {
@@ -216,11 +168,133 @@ const Expense = ({ navigation }) => {
                     title: "Jeans",
                     description: "Blue Jeans",
                     location: "Colombo - 04' Mall",
-                    total: 50.00,
+                    total: 3500.00,
                     status: confirmStatus,
                 },
             ],
-        }
+        },
+        {
+            id: 7,
+            name: "Flight Tickets",
+            icon: icons.flight_tickets,
+            color: COLORS.darkGreen,
+            expenses: [
+                {
+                    id: 19,
+                    title: "India",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 2500.00,
+                    status: pendingStatus,
+                },
+                {
+                    id: 20,
+                    title: "China",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 3500.00,
+                    status: confirmStatus,
+                },
+            ],
+         },
+        {
+            id: 8,
+            name: "Game",
+            icon: icons.game,
+            color: COLORS.blue,
+            expenses: [
+                {
+                    id: 21,
+                    title: "India",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 25000.00,
+                    status: pendingStatus,
+                },
+                {
+                    id: 22,
+                    title: "India",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 3500.00,
+                    status: confirmStatus,
+                },
+            ],
+         },
+         {
+            id: 9,
+            name: "Reload",
+            icon: icons.reload,
+            color: COLORS.peach,
+            expenses: [
+                {
+                    id: 23,
+                    title: "India",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 25000.00,
+                    status: pendingStatus,
+                },
+                {
+                    id: 24,
+                    title: "India",
+                    description: "Fly",
+                    // location: "Colombo - 04' Mall",
+                    total: 3500.00,
+                    status: confirmStatus,
+                },
+            ],
+         },
+         {
+            id: 10,
+            name: "Bill",
+            icon: icons.bill,
+            color: COLORS.emerald,
+            expenses: [
+                {
+                    id: 25,
+                    title: "Electricity",
+                    description: "Electricity",
+                    // location: "Colombo - 04' Mall",
+                    total: 25000.00,
+                    status: pendingStatus,
+                },
+                {
+                    id: 26,
+                    title: "Water Bill",
+                    description: "Bill",
+                    // location: "Colombo - 04' Mall",
+                    total: 3500.00,
+                    status: confirmStatus,
+                },
+            ],
+         },
+         {
+            id: 11,
+            name: "Transfers",
+            icon: icons.send,
+            color: COLORS.purple,
+            expenses: [
+                {
+                    id: 27,
+                    title: "Send Money",
+                    description: "To Frien",
+                    // location: "Colombo - 04' Mall",
+                    total: 25000.00,
+                    status: pendingStatus,
+                },
+                {
+                    id: 28,
+                    title: "Send Money",
+                    description: "To Church",
+                    // location: "Colombo - 04' Mall",
+                    total: 3500.00,
+                    status: confirmStatus,
+                },
+            ],
+         },
+
+
     ]
 
     const categoryListHeightAnimationValue = useRef(new Animated.Value(115)).current;
@@ -230,51 +304,6 @@ const Expense = ({ navigation }) => {
     const [selectedCategory, setSelectedCategory] = React.useState(null)
     const [showMoreToggle, setShowMoreToggle] = React.useState(false)
 
-    // function renderNavBar () {
-    //     return (
-    //         <View
-    //             style={{
-    //                 flexDirection: 'row',
-    //                 height: 40,
-    //                 justifyContent: 'space-between',
-    //                 alignItems: 'flex-end',
-    //                 paddingHorizontal: SIZES.padding,
-    //                 backgroundColor: COLORS.white,
-    //             }}
-    //         >
-    //             <TouchableOpacity
-    //                  style={{ justifyContent: 'center', alignItems: 'flex-end', width: 20 }}
-    //                  onPress={() => navigation.navigate('Home')}
-    //             >
-    //                 <Image 
-    //                     source = {icons.back}
-    //                     style = {{
-    //                         width :30,
-    //                         height :20,
-    //                         tintColor : COLORS.black
-    //                     }}
-    //                 />
-    //             </TouchableOpacity>
-                   
-                    
-    //             <TouchableOpacity
-    //                  style={{ justifyContent: 'center', alignItems: 'flex-end', width: 50 }}
-    //                  onPress={() => console.log('More')}
-    //             >
-    //                 <Image 
-    //                     source = {icons.more_icon}
-    //                     style = {{
-    //                         width :30,
-    //                         height :30,
-    //                         tintColor : COLORS.black
-    //                     }}
-    //                 />
-    //             </TouchableOpacity>
-
-    //         </View>
-    //     )
-
-    // }
 
     function renderHeader() {
         return (
@@ -719,9 +748,6 @@ const Expense = ({ navigation }) => {
                 backgroundColor: COLORS.white
                 }}     
         >
-            {/* Nav Bar section  */}
-            {/* {renderNavBar()} */}
-
             {/* Header section */}
             {renderHeader()}
 

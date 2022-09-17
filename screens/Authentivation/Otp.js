@@ -17,18 +17,18 @@ const Otp = ({ navigation }) => {
 
 const [timer, setTimer] = React.useState(60)
 
-// React.useEffect (() => {
-//     let interval = setInterval (() => {
-//         setTimer(prevTimer => {
-//             if (prevTimer > 0) {
-//                 return prevTimer -1
-//             } else {
-//                 return prevTimer
-//             }
-//         })
-//     }, 1000)
-//     return () => clearInterval (interval) 
-// }, [])
+React.useEffect (() => {
+    let interval = setInterval (() => {
+        setTimer(prevTimer => {
+            if (prevTimer > 0) {
+                return prevTimer -1
+            } else {
+                return prevTimer
+            }
+        })
+    }, 1000)
+    return () => clearInterval (interval) 
+}, [])
 
     return (
         <AuthLayout
@@ -81,9 +81,8 @@ const [timer, setTimer] = React.useState(60)
                     }}> Didn't receive code? </Text>
 
                 <TextButton 
-                label={'Resend'}
-                // label={'Resend (${timer}s)'}
-                // disabled = {timer == 0 ? false : true}
+                label={`Resend (${timer}s)`}
+                disabled = {timer == 0 ? false : true}
                 buttonContainerStyle= {{
                     marginLeft :  SIZES.base,
                     backgroundColor : null
@@ -92,11 +91,10 @@ const [timer, setTimer] = React.useState(60)
                     color : COLORS.primary,
                     ...FONTS.h3
                 }}
-                    // onPress = {() => setTimer(60)}
+                    onPress = {() => setTimer(60)}
                 />                        
                 </View>
             </View>
-
 
 
             {/* Footer */}

@@ -33,9 +33,23 @@ const onSelectSwitch = (value) => {
     return (
 
     <SafeAreaView>
-        <ScrollView style = {{ padding : 8}}>
 
-        <Text style={{ color: COLORS.purple2, fontWeight: 'bold', ...FONTS.h2, marginLeft: SIZES.padding * 6, marginTop: SIZES.padding * 1, marginBottom: SIZES.padding*1}}> Games </Text>
+       <ScrollView style = {{ padding : 8}}>
+        
+       <TouchableOpacity
+                        onPress={() => navigation.navigate('Home')}
+            >
+                <Image 
+                    source = {icons.back}
+                    style = {{
+                        width :20,
+                        height :20,
+                        tintColor : COLORS.black,
+                    }}
+                />
+            </TouchableOpacity>
+
+        <Text style={{ color: COLORS.purple2, fontWeight: 'bold', ...FONTS.h2, marginLeft: SIZES.padding * 6.3, marginTop: SIZES.padding * -0.5, marginBottom: SIZES.padding*1}}> Games </Text>
 
             <View 
                 style={{ 
@@ -58,7 +72,10 @@ const onSelectSwitch = (value) => {
                         width :20,
                         marginLeft: SIZES.padding * 1
                     }}
-                />               
+                />  
+
+
+
                 <TextInput 
                     style = {{
                         flex: 1,
@@ -68,6 +85,10 @@ const onSelectSwitch = (value) => {
                     }}
                     placeholder = "Search" />
             </View>
+
+
+
+
 
             <View
                 style = {{
@@ -89,10 +110,7 @@ const onSelectSwitch = (value) => {
               renderItem={renderBanner}
               sliderWidth={windowWidth - 40}
               itemWidth={300}
-              loop = {true}
-
-              
-              
+              loop = {true}          
               />
 
               <View style={{marginVertical: 20}}>

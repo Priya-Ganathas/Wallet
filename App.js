@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp,Bill, Game ,Flight, CustomMenu, Notifications} from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp ,Bill, Game , CustomMenu, Notifications, SendMoney, CardPayment } from "./screens";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
@@ -25,7 +25,7 @@ const App = () => {
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'Home'}
+                initialRouteName={'Onboarding'}
             >
 
             {/* Screens */}
@@ -96,8 +96,18 @@ const App = () => {
                     name="Game"
                     component={Game}
                 /> 
-{/* 
+
                 <Stack.Screen
+                    name="SendMoney"
+                    component={SendMoney}
+                />
+
+                <Stack.Screen
+                    name="CardPayment"
+                    component={CardPayment}
+                />
+
+                {/* <Stack.Screen
                     name="Flight"
                     component={Flight}
                 />  */}

@@ -50,6 +50,17 @@ export const pin = require("../assets/icons/pin.png");
 export const up_arrow = require("../assets/icons/up_arrow.png");
 export const expense = require("../assets/icons/expense.png");
 
+export const support = require("../assets/icons/support.png");
+export const account = require("../assets/icons/account.png");
+export const faceid = require("../assets/icons/faceid.png");
+export const financepro = require("../assets/icons/financepro.png");
+export const fingerprint = require("../assets/icons/fingerprint.png");
+export const FinTech = require("../assets/icons/FinTech.jpg");
+export const logout1 = require("../assets/icons/logout1.png");
+export const profile = require("../assets/icons/profile.jpg");
+export const privacypolicy = require("../assets/icons/privacy-policy.png");
+
+
 
 export default {
     back,
@@ -103,7 +114,14 @@ export default {
     baby_car,
     up_arrow,
     pin,
-    expense
+    expense,
 
-
+    support,
+    account,
+    faceid,
+    financepro,
+    fingerprint,
+    logout1,
+    profile,
+    privacypolicy
 }

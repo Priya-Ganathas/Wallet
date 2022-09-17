@@ -15,6 +15,11 @@ const Etisalat = require("../assets/images/SpecialPromos/etisalat.jpg");
 const Hutch = require("../assets/images/SpecialPromos/Hutch.png");
 const Airtel = require("../assets/images/SpecialPromos/Airtel.png");
 
+const charity = require("../assets/images/SendMoney/rotaract.png");
+const rotaract = require("../assets/images/SendMoney/rotaract.png");
+const WIC = require("../assets/images/SendMoney/WIC.png");
+const leo = require("../assets/images/SendMoney/leo.png");
+
 
 export default {
     onboardingImage,
@@ -31,7 +36,12 @@ export default {
     Mobitel,
     Etisalat,
     Hutch,
-    Airtel
+    Airtel,
+
+    charity,
+    rotaract,
+    WIC,
+    leo
 
 
 

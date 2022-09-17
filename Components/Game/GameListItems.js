@@ -49,7 +49,7 @@ export default function ListItem({photo, title, subTitle, isFree, price, onPress
           textAlign: 'center',
           ...FONTS.h4
         }}>
-          {isFree == 'Yes' && 'Play'}
+          {isFree == 'Yes' && 'Install'}
           {isFree == 'No' && price}
         </Text>
       </TouchableOpacity>

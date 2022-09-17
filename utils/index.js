@@ -1,8 +1,8 @@
 import utils from "./Utils";
-import PushNotifications from "./PushNotifications";
+// import PushNotifications from "./PushNotifications";
 
 export {
     utils,
-    PushNotifications
+    // PushNotifications
 };
 
