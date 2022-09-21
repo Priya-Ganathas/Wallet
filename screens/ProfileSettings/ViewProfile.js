@@ -20,15 +20,15 @@ const ViewProfile = ({ navigation }) => {
         <View style={{flexDirection: 'row', marginTop: 25}}>
           <Avatar.Image 
             source={icons.profile}
-            size={80}
+            size={120}
           />
 
         <View style={{marginLeft: 20}}>
         <Title style={[styles.title, {
-              marginTop:15,
-              marginBottom: 5,
+              marginTop:40,
+              marginBottom: 10,
             }]}>  {auth().currentUser.displayName} </Title>
-            <Caption style={styles.caption}>Accountant</Caption>
+            <Caption style={{marginLeft:10}}>Accountant</Caption>
         </View>
 
         
@@ -41,7 +41,7 @@ const ViewProfile = ({ navigation }) => {
                     style = {{
                         width :20,
                         height :20,
-                        marginLeft:120,
+                        marginLeft:10,
                         marginTop: -30,
                         tintColor : COLORS.black
                     }}
@@ -61,12 +61,12 @@ const ViewProfile = ({ navigation }) => {
        
         <View style={styles.row}>
         <Image source={icons.phone1} style = {{ height:20, width:20 , color: COLORS.gray}}/>
-          <Text style={{color:COLORS.gray, marginLeft: 20}}> +94 077110000 </Text>
+          <Text style={{color:COLORS.gray, marginLeft: 20}}>+94 077110000 </Text>
         </View>
 
         <View style={styles.row}>
         <Image source={icons.email} style = {{ height:20, width:20 ,  color: COLORS.gray}}/>
-          <Text style={{color:COLORS.gray, marginLeft: 20}}> priya@gmail.com </Text>
+          <Text style={{color:COLORS.gray, marginLeft: 20}}>{auth().currentUser.email} </Text>
         </View>
         </View>
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
   },
 

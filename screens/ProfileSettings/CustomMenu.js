@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+
 import {
     View,
     Text,
     TouchableOpacity,
     StyleSheet,
-    SafeAreaView,
     Image,
-    RecyclerViewBackedScrollViewComponent
+    ScrollView,
+    BackHandler,
+    Alert
 } from 'react-native';
+
 import auth from '@react-native-firebase/auth';
+
 import { COLORS, SIZES, FONTS, icons, images } from '../../constants/Index';
 
 import { onPartialLoad } from 'deprecated-react-native-prop-types/DeprecatedImagePropType';
@@ -23,108 +27,120 @@ import Settings from '../../assets/icons/settingsfilled.png';
 import FaceID from '../../assets/icons/faceid.png';
 import Fingerprint from '../../assets/icons/fingerprint.png';
 import logout from '../../assets/icons/logout1.png';
+import Linked from '../../assets/icons/logout1.png';
+import Two from '../../assets/icons/logout1.png';
+import Purchases from '../../assets/icons/logout1.png';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { disableFullscreenUI } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
+import { onPress } from 'deprecated-react-native-prop-types/DeprecatedTextPropTypes';
 
 const CustomMenu = ({ navigation }) => {
 
     const [currentTab, setCurrentTab] = useState("Home");
-
-
     return (
-        <SafeAreaView
-            style={{ backgroundColor : COLORS.lime1, flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', padding: 5}} >
-                <View style = {{justifyContent: 'flex-end' , padding : 20}}>
-                    <Image
-                        source={icons.profile}
-                        style={{
-                            width: 60,
-                            height: 60,
-                            borderRadius : 10    ,
-                            marginTop : 5 
-                         }}   
-                    />
-                    <Text style={{
-                        fontSize: 20,
-                        fontWeight: 'bold',
-                        color: COLORS.peach1,
-                        marginTop: 15,
-                        marginLeft : -10
-                        }}> {auth().currentUser.displayName} </Text>
+        <View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style = {{width:'100%' , backgroundColor: COLORS.black, height:100}}></View>
 
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('ViewProfile')}
-                    >
+                <View style={{ backgroundColor : COLORS.lime1, flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', padding: 5}} >
+                    <View style = {{ marginTop:-90, alignItems:'center',padding : 20}}>
+                        <Image
+                            source={icons.profile}
+                            style={{
+                                marginRight:150,
+                                // alignItems:'center',
+                                // marginLeft: 10,
+                                width: 150,
+                                height: 150,
+                                borderRadius : 100    ,
+                            }}   
+                        />
                         <Text style={{
-                            marginTop: 6,
-                            color: COLORS.peach1,
-                            marginLeft : -7
-                            }}>  View Profile  </Text>
-                            
-                    </TouchableOpacity>
+                            marginLeft: 100,
+                            fontSize: 20,
+                            fontWeight: 'bold',
+                            color: COLORS.white,
+                            ...FONTS.body1,
+                            marginTop: -80,
+                            }}> {auth().currentUser.displayName} </Text>
 
-                
-                    <View style = {{flexGrow : 1}}>
-                        {
-                            //Tab Bar Buttons
-                        }
-                     {TabButton(currentTab, setCurrentTab, "Finance PRO", FinancePRO)}
-                     {TabButton(currentTab, setCurrentTab, "Account", Account)}
-                     {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
-                     {TabButton(currentTab, setCurrentTab, "Privacy Policy", Privacy)}
-                     {TabButton(currentTab, setCurrentTab, "Support", Support)}
-                     {TabButton(currentTab, setCurrentTab, "Settings", Settings)}
-                     {TabButton(currentTab, setCurrentTab, "Use Face ID to Unlock", FaceID)}
-                     {TabButton(currentTab, setCurrentTab, "Use Fingerprint to Unlock", Fingerprint)}
-                     </View>
-                     
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('ViewProfile')}
+                        >
+                            <Text style={{
+                                ...FONTS.body3,
+                                marginLeft: 100,
+                                marginTop: 2,
+                                marginBottom:30 ,
+                                color: COLORS.white,
+                                }}>  View Profile  </Text>
+                                
+                        </TouchableOpacity>
 
-                    <View>
-                    {TabButton(currentTab, setCurrentTab, "LogOut", logout,navigation) }
-                    </View>
+                    
+                        <View style = {{flexGrow : 1}}>
+                            {
+                                //Tab Bar Buttons
+                            }
+                            {TabButton(currentTab, setCurrentTab, "Finance PRO", FinancePRO)}
+                            {TabButton(currentTab, setCurrentTab, "Account", Account)}
+                            {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
+                            {TabButton(currentTab, setCurrentTab, "Privacy Policy", Privacy)}
+                            {TabButton(currentTab, setCurrentTab, "Support", Support)}
+                            {TabButton(currentTab, setCurrentTab, "Settings", Settings)}
+                            {TabButton(currentTab, setCurrentTab, "Linked Devices", Linked)}
+                            {TabButton(currentTab, setCurrentTab, "Two-Step-Verification", Two)}
+                            {TabButton(currentTab, setCurrentTab, "Purchases and Memberships", Purchases)}
+                            {TabButton(currentTab, setCurrentTab, "Use Face ID to Unlock", FaceID)}
+                            {TabButton(currentTab, setCurrentTab, "Use Fingerprint to Unlock", Fingerprint)}
+                        </View>
 
-
+                        <View > 
+                        {TabButton(currentTab, setCurrentTab, "LogOut", logout,navigation)}                      
+                        </View>
+                    </View>               
                 </View>
-
-         </SafeAreaView>
+            </ScrollView>
+        </View>
+         
     )
 }
 
 // For multi Buttons........
+
 const TabButton = (currentTab, setCurrentTab, title, image,navigation) => {
-    return (
-
-
-
-        <TouchableOpacity onPress={() => { 
+    return (        
+    <TouchableOpacity 
+            onPress={() => { 
                  if (title == "LogOut") {
-                    AsyncStorage.removeItem('@storage_Key', navigation.navigate('Login'))
+                    AsyncStorage.removeItem('@storage_Key', navigation.navigate('Onboarding2'))
                     } else {
                         setCurrentTab(title)
-                    }
-        }}>
-
+                    }                         
+            }}
+            >
         <View style = {{
             flexDirection : 'row',
             alignItems : 'center',
-            paddingVertical : 8,
+            paddingVertical : 12.2,
             backgroundColor : currentTab == title ? COLORS.white :COLORS.transparent,
             paddingLeft : 10,
             paddingRight : 30,
             borderRadius : 8,
-            marginTop : 15,
-
         }}>
+
             <Image source={image} style = {{width : 20, height : 20,tintColor: currentTab == title ? COLORS.primary : "black"}} />
-            <Text style={{...FONTS.h3,fontWeight: 'bold' , paddingLeft : 15, color: currentTab == title ? COLORS.primary  : "black"}}> {title} </Text>
+            {/* <Text style={{...FONTS.h3,fontWeight: 'bold' , paddingLeft : 15, color: currentTab == title ? COLORS.primary  : "lightgray3"}}> {title} </Text> */}
+            <Text style={{...FONTS.h3,fontWeight: 'bold' , paddingLeft : 15}}> {title} </Text>
+
         </View>
     </TouchableOpacity>
 
+
+
+
     )
-
-
 }
-
-
 
 export default CustomMenu;

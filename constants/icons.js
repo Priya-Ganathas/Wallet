@@ -66,7 +66,7 @@ const mapmarker = require("../assets/icons/mapmarker.png");
 const editprofile = require("../assets/icons/editprofile.png");
 const camera = require("../assets/icons/camera.png");
 const globe = require("../assets/icons/globe.png");
-
+const job = require("../assets/icons/Job.png");
 
 
 export default {
@@ -137,5 +137,6 @@ export default {
     mapmarker,
     email,
     camera,
-    globe
+    globe,
+    job
 }

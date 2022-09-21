@@ -2,16 +2,12 @@ import React from 'react';
 // import PushNotifications from '../utils/PushNotifications';
 import { View,Text,TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground} from 'react-native';
 import { color } from 'react-native-reanimated';
-
 import { images, icons, COLORS, FONTS, SIZES } from '../../constants/Index';
-
 import BottomSheet from 'reanimated-bottom-sheet';
-
 import Animated from 'react-native-reanimated';
-
 import ImagePicker from 'react-native-image-crop-picker';
-
 import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const EditProfile = ({ navigation }) => {
 
@@ -105,9 +101,9 @@ const EditProfile = ({ navigation }) => {
             <ImageBackground
                 source = {icons.profile}
                 style = {{
-                    height: 100, 
-                    width: 100}}
-                imageStyle={{borderRadius: 15}}>
+                    height: 120, 
+                    width: 120}}
+                imageStyle={{borderRadius: 30}}>
             <View
                 style={{
                     flex: 1,
@@ -256,6 +252,27 @@ const EditProfile = ({ navigation }) => {
                     ]}
                 />
             </View>
+
+            <View style={styles.action}>
+            <Image
+                source = {icons.job}
+                style = {{
+                    height: 15,
+                    width: 15,
+                     }}/>
+                <TextInput
+                    placeholder="Job"
+                    placeholderTextColor="#666666"
+                    autoCorrect={false}
+                    style={[
+                    styles.textInput,
+                    {
+                        color: COLORS.gray,
+                    },
+                    ]}
+                />
+            </View>
+
 
             <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
           <Text style={styles.panelButtonTitle}>Submit</Text>

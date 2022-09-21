@@ -1,50 +1,95 @@
-import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import React, { useEffect, useState, useRef} from 'react';
+import {View, Text, TouchableOpacity, Image, StyleSheet, Button} from 'react-native';
 import {AuthLayout} from '../';
 import {FONTS, SIZES, COLORS, icons} from '../../constants/Index';
 import {FormInput, CustomSwitch, TextButton} from '../../Components';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {utils} from '../../utils';
+// import BottomSheet from '../../Components/index';
+import TouchID from 'react-native-touch-id';
+import Animated, { FlipInEasyX } from 'react-native-reanimated';
 
 
 const Login = ({navigation}) => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [emailError, setEmailError] = React.useState('');
 
-  const [showPass, setShowPass] = React.useState('');
-  const [saveMe, setSaveMe] = React.useState(false);
+//Sign In Function
+const [email, setEmail] = React.useState('');
+const [password, setPassword] = React.useState('');
+const [emailError, setEmailError] = React.useState('');
 
-  function isEnableSignIn() {
-    return email != '' && password != '' && emailError == '';
+const [showPass, setShowPass] = React.useState('');
+const [saveMe, setSaveMe] = React.useState(false);
+
+  //FingerPrint
+const [isAuth, setIsAuth] = useState(false);
+
+  const optionalConfigObject = {
+    title: 'Provide Your Touch ID', // Android
+    imageColor: COLORS.primary, // Android
+    imageErrorColor: '#ff0000', // Android
+    sensorDescription: 'Touch sensor', // Android
+    sensorErrorDescription: 'Failed', // Android
+    cancelText: 'Cancel', // Android
+    fallbackLabel: 'Show Passcode', // iOS (if empty, then label is hidden)
+    unifiedErrors: false, // use unified error messages (default false)
+    passcodeFallback: false, // iOS - allows the device to fall back to using the passcode, if faceid/touch is not available. this does not mean that if touchid/faceid fails the first few times it will revert to passcode, rather that if the former are not enrolled, then it will use the passcode.
+  };
+  useEffect(() => {
+    handleBiometric();
+  });
+
+  const handleBiometric = () => {
+    TouchID.isSupported(optionalConfigObject).then(biometryType  => {
+      if (biometryType  === 'FaceID') {
+        console.log('FaceID is supported.');
+      } else {
+        console.log('TouchID is supported.');
+        if (isAuth) {
+            return null
+        }
+        TouchID.authenticate('' , optionalConfigObject).then((success) => {
+          console.log('Success', success);
+          setIsAuth(success);
+        })
+        .catch(err => {
+          // BackHandler.exitApp();
+          console.log('Touch ID not Supported' + err)
+        })
+      }
+    });
   }
 
-  const loginFunction = (email, password) => {
-    console.error('email:', email);
-    console.error('password:', password);
+  function isEnableSignIn() {
+        return email != '' && password != '' && emailError == '';
+      }
 
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(async res => {
-        console.error('res:', res);
+      const loginFunction = (email, password) => {
+        console.error('email:', email);
+        console.error('password:', password);
 
-        const idTokenResult = await auth().currentUser.getIdTokenResult();
-        console.error('idTokenResult: ', idTokenResult);
+        auth()
+          .signInWithEmailAndPassword(email, password)
+          .then(async res => {
+            console.error('res:', res);
 
-        await AsyncStorage.setItem('@storage_Key', idTokenResult.token);
+            const idTokenResult = await auth().currentUser.getIdTokenResult();
+            console.error('idTokenResult: ', idTokenResult);
 
-        navigation.navigate('Home');
-      })
-      .catch(error => {
-        console.error(error);
-        if (error.code === 'auth/email-already-in-use') {
-        }
-        if (error.code === 'auth/invalid-email') {
+            await AsyncStorage.setItem('@storage_Key', idTokenResult.token);
 
-        }
-      });
-  };
+            navigation.navigate('Home');
+          })
+          .catch(error => {
+            console.error(error);
+            if (error.code === 'auth/email-already-in-use') {
+            }
+            if (error.code === 'auth/invalid-email') {
+
+            }
+          });
+      };
+
 
   return (
     <AuthLayout
@@ -144,6 +189,11 @@ const Login = ({navigation}) => {
           />
         </View>
 
+
+         {/* Touch ID */}
+            
+         
+
         {/* Sign In */}
         <TextButton
           label="Sign In"
@@ -196,7 +246,42 @@ const Login = ({navigation}) => {
         </View>
       </View>
     </AuthLayout>
-  );
+   );
+
+
+
+   
+
+  //Bottom Sheet Function
+
+// const [show, setShow] = useState(true);
+
+// return (
+//   <Provider>
+//     <View style= {styles.container}>
+//       <Button onPress = {() => setShow(true) } title = "Shw Btm Sheet" />
+//         <BottomSheet 
+//           show = {show}
+//           onDismiss={() => {
+//             setShow(false);
+//           }}>
+//         </BottomSheet>
+//         <StatusBar style = "auto"/>
+//     </View>
+//   </Provider>
+// )
+
 };
 
+
+
 export default Login;
+
+// const styles = StyleSheet.create({
+//   container :{
+//     flex: 1,
+//     backgroundColor: COLORS.gray,
+//     alignItems: 'center',
+//     justifyContent: 'center'
+//   }
+// })

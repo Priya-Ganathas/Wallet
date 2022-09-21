@@ -3,18 +3,21 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    ToastAndroid,
+    Alert
 } from "react-native"
 import { RNCamera } from 'react-native-camera'
 import { LogBox } from 'react-native';
 
 import { COLORS, FONTS, SIZES, icons, images } from "../constants/Index";
+import { onPress } from "deprecated-react-native-prop-types/DeprecatedTextPropTypes";
 
 const Scan = ({ navigation }) => {
-
+    
     function renderHeader() {
         return (
-            <View style={{ flexDirection: 'row', marginTop: SIZES.padding * 4, paddingHorizontal: SIZES.padding * 3 }}>
+            <View style={{ flexDirection: 'row', marginTop: SIZES.padding * 2, paddingHorizontal: SIZES.padding * 3 }}>
                 <TouchableOpacity
                     style={{
                         width: 45,
@@ -34,7 +37,7 @@ const Scan = ({ navigation }) => {
                 </TouchableOpacity>
 
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ color: COLORS.white, ...FONTS.body3 }}>Scan for Payment</Text>
+                    <Text style={{ color: COLORS.white, ...FONTS.body3 }}> Scan for Payment... </Text>
                 </View>
 
                 <TouchableOpacity
@@ -67,16 +70,16 @@ const Scan = ({ navigation }) => {
                 style={{
                     flex: 1,
                     alignItems: 'center',
-                    justifyContent: 'center'
-                }}
+                    justifyContent: 'center',
+                    }}
             >
                 <Image
                     source={images.focus}
                     resizeMode="stretch"
                     style={{
-                        marginTop: "-30%",
-                        width: 200,
-                        height: 300
+                        marginTop: "-50%",
+                        width: 300,
+                        height: 300,
                     }}
                 />
             </View>
@@ -98,7 +101,7 @@ const Scan = ({ navigation }) => {
                     backgroundColor: COLORS.white
                 }}
             >
-                <Text style={{ ...FONTS.h4 }}>Another payment methods</Text>
+                <Text style={{ ...FONTS.h4 }}> Another payment methods </Text>
 
                 <View
                     style={{
@@ -174,10 +177,22 @@ const Scan = ({ navigation }) => {
         )
     }
 
-    function onBarCodeRead(result) {
-        console.log(result.data)
-    }
-
+    //For Show toast msg
+         function onBarCodeRead(result) {
+            console.log(result.data)
+            ToastAndroid.showWithGravityAndOffset('Scanned Successfully', ToastAndroid.SHORT, ToastAndroid.TOP,0,1500);
+        }
+        
+        // onBarCodeRead (result => {
+        //     if (result.data){
+        //        setToastMsg ('Scanned Successfully');
+        //     } else if (result.errorCode == 'others'){
+        //        Alert.alert(
+        //            'Scan Again the Image'
+        //        )
+        //    }
+        //     })
+    
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.transparent }}>
             <RNCamera
@@ -195,12 +210,15 @@ const Scan = ({ navigation }) => {
                     buttonPositive: "OK",
                     buttonNegative: "Cancel"
                 }}
-            >
+            
+                >
+       
                 {renderHeader()}
                 {renderScanFocus()}
                 {renderPaymentMethods()}
             </RNCamera>
         </View>
+
     )
 }
 

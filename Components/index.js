@@ -3,6 +3,7 @@ import TabIcon from "./TabIcon";
 import FormInput from "./FormInput";
 import CustomSwitch from "./CustomSwitch";
 import TextButton from "./TextButton";
+import ButtonSheet from "./BottomSheet"
 
         
 
@@ -11,5 +12,6 @@ export {
     TabIcon,
     FormInput,
     CustomSwitch,
-    TextButton
+    TextButton,
+    ButtonSheet
   }

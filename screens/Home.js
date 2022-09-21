@@ -90,16 +90,17 @@ const Home = ({ navigation }) => {
         return (
             <TouchableOpacity
                 style={{ justifyContent: 'center', marginHorizontal: SIZES.base, ...specialPromoDataStyle }}
-                onPress = {() => navigation.navigate ("specialPromoDataDetail") } 
+                // onPress = {() => navigation.navigate ("specialPromoDataDetail") } 
+                onPress={() => console.log("specialPromoData")}
             >
                 <Image
                     source={item.img}
                     resizeMode="cover"
                     style={{
-                        width: 85,
+                        width: 110,
                         height: '60%',
-                        borderRadius: 15
-                    
+                        borderRadius: 15,
+                        borderColor:COLORS.black
                     }}
                 />
 
@@ -210,10 +211,10 @@ const Home = ({ navigation }) => {
                 </View>
             </View>
 
-            {/* specialPromoData */}
+            {/* //specialPromoData */}
             <View style={{ 
                 flex: 1, }}>
-                <Text style={{  marginTop: SIZES.padding * 0, marginHorizontal: SIZES.padding, ...FONTS.body3, marginBottom:15, color: COLORS.black}}>Special Promos</Text>
+                <Text style={{  marginTop: SIZES.padding * 0, marginHorizontal: SIZES.padding, ...FONTS.body3, marginBottom:15, color: COLORS.black}}>Special Promos </Text>
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
