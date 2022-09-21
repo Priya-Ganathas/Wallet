@@ -20,6 +20,8 @@ import { VictoryPie } from 'victory-native';
 
 import { COLORS, FONTS, SIZES, icons, images } from '../constants/Index';
 
+import auth from '@react-native-firebase/auth';
+
 const Expense = ({ navigation }) => {
 
       // dummy data
@@ -144,7 +146,7 @@ const Expense = ({ navigation }) => {
                     title: "Gloves",
                     description: "Gym Equipment",
                     location: "Colombo - 04' Gym",
-                    total: 15000.00,
+                    total: 1000.00,
                     status: confirmStatus,
                 },
             ],
@@ -310,7 +312,7 @@ const Expense = ({ navigation }) => {
             <View style={{ paddingHorizontal: SIZES.padding, paddingVertical: SIZES.padding, backgroundColor: COLORS.white }}>
                 <View>
                     <Text style={{ color: COLORS.primary, ...FONTS.h2 }}>My Expenses</Text>
-                    <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}>Summary (private)</Text>
+                    <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}> {auth().currentUser.accountBalance} </Text>
                 </View>
 
                 <View style={{ flexDirection: 'row', marginTop: SIZES.padding, alignItems: 'center' }}>

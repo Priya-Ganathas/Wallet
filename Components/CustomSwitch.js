@@ -73,13 +73,13 @@ const styles = StyleSheet.create ({
         justifyContent : 'center',
         borderwidth :1,
         borderRadius : 10,
-        borderColor : COLORS.gray,
-    },
+        backgroundColor  : COLORS.lightGray,
+        },
     dot: {
         width :12,
         height :12,
-        borderRadius : 6
-    }
+        borderRadius : 6,
+     }
 })
 
 export default CustomSwitch;

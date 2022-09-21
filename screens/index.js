@@ -4,8 +4,10 @@ import Home from "./Home";
 import Expense from "./Expense";
 import Scan from "./Scan";
 import Support from "./Notifications";
-import CustomMenu from "./CustomMenu";
+import CustomMenu from "./ProfileSettings/CustomMenu";
 import Notifications from "./Notifications";
+import ViewProfile from "./ProfileSettings/ViewProfile";
+import EditProfile from "./ProfileSettings/EditProfile";
 // import specialPromoDataDetail from "./Features/specialPromoDataDetail";
 
 //Authentication
@@ -35,6 +37,8 @@ export {
     Support,
     CustomMenu,
     Notifications,
+    ViewProfile,
+    EditProfile,
     // specialPromoDataDetail,
     Otp,
     ForgotPassword,

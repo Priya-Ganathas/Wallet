@@ -199,7 +199,7 @@ const Home = ({ navigation }) => {
                         icon={icons.flight_tickets}
                         bgColor={['#7be993', '#46caaf']}
                         label="Flight"
-                        onPress={() => navigation.navigate("Flight") }
+                        onPress={() => {console.log("Flight") }}
                     />
                     <OptionItem
                         icon={icons.more}

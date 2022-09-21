@@ -15,6 +15,9 @@ import { FormInput, TextButton, } from "../../Components"
 
 import {utils} from "../../utils"
 
+import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 // import { set } from 'react-native-reanimated';
 
 const SignUp = ({ navigation }) => {
@@ -153,7 +156,22 @@ const SignUp = ({ navigation }) => {
                     backgroundColor : COLORS.primary,
                     backgroundColor : isEnableSignUp() ? COLORS.primary : COLORS.transparentprimary
                 }}
-                onPress = {() => navigation.navigate ("Otp")}
+                onPress = {() => {
+                    if(email && password){
+                        console.log("email: ",email)
+                        console.log("pass: ", password)
+                    auth().createUserWithEmailAndPassword(email, password).then(async res => {
+                        const update = {
+                            displayName: username,
+                            accountBalance: 10000
+                          };
+                          
+                          await auth().currentUser.updateProfile(update);
+                          console.error('profile:', auth().currentUser);
+                    navigation.navigate ("Login")}) .catch(error => {
+                        console.log("error: ", error)
+                    })
+                }}}
             />
 
             <View 

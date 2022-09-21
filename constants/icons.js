@@ -60,6 +60,13 @@ export const logout1 = require("../assets/icons/logout1.png");
 export const profile = require("../assets/icons/profile.jpg");
 export const privacypolicy = require("../assets/icons/privacy-policy.png");
 
+const phone1 = require("../assets/icons/phone1.png");
+const email = require("../assets/icons/email.png");
+const mapmarker = require("../assets/icons/mapmarker.png");
+const editprofile = require("../assets/icons/editprofile.png");
+const camera = require("../assets/icons/camera.png");
+const globe = require("../assets/icons/globe.png");
+
 
 
 export default {
@@ -123,5 +130,12 @@ export default {
     fingerprint,
     logout1,
     profile,
-    privacypolicy
+    privacypolicy,
+
+    editprofile,
+    phone1,
+    mapmarker,
+    email,
+    camera,
+    globe
 }

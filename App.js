@@ -1,13 +1,17 @@
 import React from 'react';
+
 import { Image, TouchableOpacity } from 'react-native';
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp ,Bill, Game , CustomMenu, Notifications, SendMoney, CardPayment } from "./screens";
+
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp ,Bill, Game , CustomMenu, Notifications, SendMoney, CardPayment, ViewProfile, EditProfile } from "./screens";
 
 import { createStackNavigator } from "@react-navigation/stack";
+
 import { NavigationContainer } from '@react-navigation/native';
 
 import Tabs from "./navigation/tabs";
 
 import { icons, COLORS, SIZES } from './constants/Index';
+
 import { useAccordionButton } from 'react-bootstrap';
 
 console.disableYellowBox = true;
@@ -15,9 +19,6 @@ console.disableYellowBox = true;
 const Stack = createStackNavigator();
 
 const App = () => {
-    // useEffect(() => {
-    //     requestUserPermission()
-    // },[])
 
     return (
         <NavigationContainer>
@@ -53,7 +54,6 @@ const App = () => {
                 <Stack.Screen
                     name="Home"
                     component={Tabs} 
-                    // component={CustomDrawer}
                />
 
                 <Stack.Screen
@@ -107,10 +107,15 @@ const App = () => {
                     component={CardPayment}
                 />
 
-                {/* <Stack.Screen
-                    name="Flight"
-                    component={Flight}
-                />  */}
+                <Stack.Screen
+                    name="ViewProfile"
+                    component={ViewProfile}
+                />
+
+                <Stack.Screen
+                    name="EditProfile"
+                    component={EditProfile}
+                />
 
             </Stack.Navigator>
         </NavigationContainer>
