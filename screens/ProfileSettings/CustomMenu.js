@@ -58,7 +58,6 @@ const CustomMenu = ({ navigation }) => {
                         />
                         <Text style={{
                             marginLeft: 100,
-                            fontSize: 20,
                             fontWeight: 'bold',
                             color: COLORS.white,
                             ...FONTS.body1,

@@ -3,6 +3,7 @@ import React from 'react';
 import { View,Text,TouchableOpacity, TextInput, StyleSheet, Image, ImageBackground} from 'react-native';
 import { color } from 'react-native-reanimated';
 import { images, icons, COLORS, FONTS, SIZES } from '../../constants/Index';
+import {CustomButton, TextButton} from '../../Components';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 import ImagePicker from 'react-native-image-crop-picker';
@@ -152,26 +153,6 @@ const EditProfile = ({ navigation }) => {
 
             <View style={styles.action}>
             <Image
-                source = {icons.user}
-                style = {{
-                    height: 15,
-                    width: 15,
-                     }}/>
-                <TextInput
-                    placeholder="Last Name"
-                    placeholderTextColor="#666666"
-                    autoCorrect={false}
-                    style={[
-                    styles.textInput,
-                    {
-                        color: COLORS.gray,
-                    },
-                    ]}
-                />
-            </View>
-
-            <View style={styles.action}>
-            <Image
                 source = {icons.phone1}
                 style = {{
                     height: 15,
@@ -274,9 +255,21 @@ const EditProfile = ({ navigation }) => {
             </View>
 
 
-            <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
-        </TouchableOpacity>
+            {/* <TouchableOpacity style={styles.commandButton} onPress={() => {}}> */}
+          {/* <Text style={styles.panelButtonTitle}>Submit</Text> */}
+          <TextButton
+          label="Submit"
+          buttonContainerStyle={{
+            marginTop: 8,
+            height: 50,
+            alignItems: 'center',
+            borderRadius: SIZES.radius,
+            backgroundColor: COLORS.primary,
+          }}
+        />
+ 
+        
+        {/* </TouchableOpacity> */}
 
             </Animated.View>
             </View>
@@ -291,25 +284,6 @@ const EditProfile = ({ navigation }) => {
 
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default EditProfile;
 
 const styles = StyleSheet.create({

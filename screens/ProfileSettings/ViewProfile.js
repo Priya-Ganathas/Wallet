@@ -17,21 +17,21 @@ const ViewProfile = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfoSection}>
-        <View style={{flexDirection: 'row', marginTop: 25}}>
+        <View style={{flexDirection: 'row', marginTop: 25, marginLeft:15}}>
           <Avatar.Image 
             source={icons.profile}
-            size={120}
-          />
+            size={120}/>
+         
 
-        <View style={{marginLeft: 20}}>
+        <View style={{marginLeft: 2}}>
         <Title style={[styles.title, {
               marginTop:40,
               marginBottom: 10,
             }]}>  {auth().currentUser.displayName} </Title>
-            <Caption style={{marginLeft:10}}>Accountant</Caption>
+            <Caption>Accountant</Caption>
         </View>
 
-        
+               
         <TouchableOpacity
                  style={{ justifyContent: 'center', width: 50 }}
                  onPress={() => navigation.navigate('EditProfile')}
@@ -41,14 +41,14 @@ const ViewProfile = ({ navigation }) => {
                     style = {{
                         width :20,
                         height :20,
-                        marginLeft:10,
-                        marginTop: -30,
+                        marginLeft:-30,
+                        marginTop: -70,
                         tintColor : COLORS.black
                     }}
                 />
             </TouchableOpacity>
 
-          </View>
+            </View>
         </View>
 
        
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
   },
 
