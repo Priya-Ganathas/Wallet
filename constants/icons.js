@@ -68,6 +68,13 @@ const camera = require("../assets/icons/camera.png");
 const globe = require("../assets/icons/globe.png");
 const job = require("../assets/icons/Job.png");
 
+const wifi = require("../assets/icons/wifi.png");
+const wifioff = require("../assets/icons/wifioff.png");
+const link = require("../assets/icons/link.png");
+const dollar = require("../assets/icons/dollar.png");
+const verify = require("../assets/icons/verify.png");
+const like = require("../assets/icons/like.png");
+
 
 export default {
     back,
@@ -138,5 +145,11 @@ export default {
     email,
     camera,
     globe,
-    job
+    job,
+    wifi,
+    wifioff,
+    like,
+    verify,
+    dollar,
+    link,
 }

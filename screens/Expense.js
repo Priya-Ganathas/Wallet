@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import {
     SafeAreaView,
     StyleSheet,
@@ -21,6 +21,9 @@ import { VictoryPie } from 'victory-native';
 import { COLORS, FONTS, SIZES, icons, images } from '../constants/Index';
 
 import auth from '@react-native-firebase/auth';
+
+import firestore from '@react-native-firebase/firestore';
+
 
 const Expense = ({ navigation }) => {
 
@@ -305,14 +308,21 @@ const Expense = ({ navigation }) => {
     const [viewMode, setViewMode] = React.useState("chart")
     const [selectedCategory, setSelectedCategory] = React.useState(null)
     const [showMoreToggle, setShowMoreToggle] = React.useState(false)
+    
 
-
+   
+    useEffect(async() => {
+         const users = await firestore().collection('Account').doc('rNg25a7UktDwBw6W2gfE').get();
+            console.log("users: ", users)
+      },[]);
+ 
     function renderHeader() {
         return (
             <View style={{ paddingHorizontal: SIZES.padding, paddingVertical: SIZES.padding, backgroundColor: COLORS.white }}>
                 <View>
                     <Text style={{ color: COLORS.primary, ...FONTS.h2 }}>My Expenses</Text>
                     <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}> {auth().currentUser.accountBalance} </Text>
+
                 </View>
 
                 <View style={{ flexDirection: 'row', marginTop: SIZES.padding, alignItems: 'center' }}>

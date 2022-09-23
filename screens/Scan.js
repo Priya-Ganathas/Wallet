@@ -10,13 +10,16 @@ import {
 import { RNCamera } from 'react-native-camera'
 import { LogBox } from 'react-native';
 
+
+
 import { COLORS, FONTS, SIZES, icons, images } from "../constants/Index";
 import { onPress } from "deprecated-react-native-prop-types/DeprecatedTextPropTypes";
 
 const Scan = ({ navigation }) => {
-    
+
     function renderHeader() {
-        return (
+
+           return (
             <View style={{ flexDirection: 'row', marginTop: SIZES.padding * 2, paddingHorizontal: SIZES.padding * 3 }}>
                 <TouchableOpacity
                     style={{
@@ -218,9 +221,11 @@ const Scan = ({ navigation }) => {
                 {renderPaymentMethods()}
             </RNCamera>
         </View>
-
+        
     )
 }
+
+  
 
 LogBox.ignoreAllLogs();
 

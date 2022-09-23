@@ -91,6 +91,7 @@ const ForgotPassword = ({ navigation }) => {
                     backgroundColor : isEnableSendEmail () ? COLORS.primary : COLORS.transparentprimary
                 }}
                 onPress = {() => navigation.goBack()}
+                // onPress={() => navigation.navigate('Otp')}
         />
 
      </AuthLayout>

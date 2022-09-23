@@ -9,6 +9,7 @@ import Animated from 'react-native-reanimated';
 import ImagePicker from 'react-native-image-crop-picker';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NetworkProvider } from 'react-native-offline';
 
 const EditProfile = ({ navigation }) => {
 
@@ -254,30 +255,18 @@ const EditProfile = ({ navigation }) => {
                 />
             </View>
 
-
-            {/* <TouchableOpacity style={styles.commandButton} onPress={() => {}}> */}
-          {/* <Text style={styles.panelButtonTitle}>Submit</Text> */}
-          <TextButton
-          label="Submit"
-          buttonContainerStyle={{
-            marginTop: 8,
-            height: 50,
-            alignItems: 'center',
-            borderRadius: SIZES.radius,
-            backgroundColor: COLORS.primary,
+         <TextButton
+            label="Submit"
+            buttonContainerStyle={{
+              marginTop: 8,
+              height: 50,
+              alignItems: 'center',
+              borderRadius: SIZES.radius,
+              backgroundColor: COLORS.primary,
           }}
         />
- 
-        
-        {/* </TouchableOpacity> */}
-
             </Animated.View>
             </View>
-          
-          
-          
-          
-          
           
           );
 

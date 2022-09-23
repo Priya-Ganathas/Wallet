@@ -31,6 +31,9 @@ const SignUp = ({ navigation }) => {
     const [usernameError, setUserNameError] = React.useState ("")
     const [passwordError , setPasswordError] = React.useState ("")
 
+    // const [accountBalance, setAccountBalance] = React.useState ("")
+
+
     function isEnableSignUp () {
         return email != "" &&  username != "" && password != "" && emailError == "" && passwordError == "" && usernameError == ""
     }
@@ -163,7 +166,7 @@ const SignUp = ({ navigation }) => {
                     auth().createUserWithEmailAndPassword(email, password).then(async res => {
                         const update = {
                             displayName: username,
-                            accountBalance: 10000
+                            accountBalance: 10000,
                           };
                           
                           await auth().currentUser.updateProfile(update);

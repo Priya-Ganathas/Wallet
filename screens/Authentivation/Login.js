@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet, Button} from 'react-native';
-import {AuthLayout} from '../';
+import {AuthLayout, Home} from '../';
 import {FONTS, SIZES, COLORS, icons} from '../../constants/Index';
 import {FormInput, CustomSwitch, TextButton} from '../../Components';
 import auth from '@react-native-firebase/auth';
@@ -9,6 +9,7 @@ import {utils} from '../../utils';
 // import BottomSheet from '../../Components/index';
 import TouchID from 'react-native-touch-id';
 import Animated, { FlipInEasyX } from 'react-native-reanimated';
+import {NetworkConsumer} from 'react-native-offline';
 
 
 const Login = ({navigation}) => {
@@ -24,41 +25,49 @@ const [saveMe, setSaveMe] = React.useState(false);
   //FingerPrint
 const [isAuth, setIsAuth] = useState(false);
 
-  const optionalConfigObject = {
-    title: 'Provide Your Touch ID', // Android
-    imageColor: COLORS.primary, // Android
-    imageErrorColor: '#ff0000', // Android
-    sensorDescription: 'Touch sensor', // Android
-    sensorErrorDescription: 'Failed', // Android
-    cancelText: 'Cancel', // Android
-    fallbackLabel: 'Show Passcode', // iOS (if empty, then label is hidden)
-    unifiedErrors: false, // use unified error messages (default false)
-    passcodeFallback: false, // iOS - allows the device to fall back to using the passcode, if faceid/touch is not available. this does not mean that if touchid/faceid fails the first few times it will revert to passcode, rather that if the former are not enrolled, then it will use the passcode.
-  };
-  useEffect(() => {
-    handleBiometric();
-  });
 
-  const handleBiometric = () => {
-    TouchID.isSupported(optionalConfigObject).then(biometryType  => {
-      if (biometryType  === 'FaceID') {
-        console.log('FaceID is supported.');
-      } else {
-        console.log('TouchID is supported.');
-        if (isAuth) {
-            return null
-        }
-        TouchID.authenticate('' , optionalConfigObject).then((success) => {
-          console.log('Success', success);
-          setIsAuth(success);
-        })
-        .catch(err => {
-          // BackHandler.exitApp();
-          console.log('Touch ID not Supported' + err)
-        })
-      }
-    });
-  }
+
+  // const optionalConfigObject = {
+  //   title: 'Fingerprint ID', // Android
+  //   imageColor: COLORS.primary, // Android
+  //   imageErrorColor: '#ff0000', // Android
+  //   sensorDescription: 'Touch sensor', // Android
+  //   sensorErrorDescription: 'Failed', // Android
+  //   cancelText: 'Cancel', // Android
+  //   fallbackLabel: 'Show Passcode', // iOS (if empty, then label is hidden)
+  //   unifiedErrors: false, // use unified error messages (default false)
+  //   passcodeFallback: false, // iOS - allows the device to fall back to using the passcode, if faceid/touch is not available. this does not mean that if touchid/faceid fails the first few times it will revert to passcode, rather that if the former are not enrolled, then it will use the passcode.
+  // };
+  // useEffect(() => {
+  //   handleBiometric();
+  // });
+
+  // const handleBiometric = () => {
+  //   TouchID.isSupported(optionalConfigObject).then(biometryType  => {
+  //     if (biometryType  === 'FaceID') {
+  //       console.log('FaceID is supported.');
+  //     } else {
+  //       console.log('Fingerprint is supported.');
+  //       if (isAuth) {
+  //           return null
+  //       }
+  //       TouchID.authenticate('' , optionalConfigObject).then((success) => {
+  //         console.log(' Authentication Success', success);
+  //         setIsAuth(success);
+  //         navigation.navigate('Home')
+  //       })
+  //       .catch(err => {
+  //         // BackHandler.exitApp();
+  //         console.log('Authentication Failed' + err)
+
+  //       })
+  //     }
+  //   });
+  // }
+
+  
+
+
 
   function isEnableSignIn() {
         return email != '' && password != '' && emailError == '';
@@ -189,11 +198,6 @@ const [isAuth, setIsAuth] = useState(false);
           />
         </View>
 
-
-         {/* Touch ID */}
-            
-         
-
         {/* Sign In */}
         <TextButton
           label="Sign In"
@@ -244,6 +248,30 @@ const [isAuth, setIsAuth] = useState(false);
             onPress={() => navigation.navigate('SignUp')}
           />
         </View>
+
+        {/* Touch ID */}
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: SIZES.radius,
+            justifyContent: 'center',
+          }}>
+          <TextButton
+            label="Touch ID"
+            buttonContainerStyle={{
+              marginLeft: 4,
+              backgroundColor: null,
+            }}
+            labelStyle={{
+              color: COLORS.primary,
+              ...FONTS.h3,
+            }}
+            onPress={() => navigation.navigate('Touch ID')}
+
+
+          />
+        </View>
+
       </View>
     </AuthLayout>
    );
