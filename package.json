@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "clean": "react-native clean-project", 
+    "clean": "react-native clean-project",
     "clean:auto": "react-native clean-project-auto"
   },
   "dependencies": {
