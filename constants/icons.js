@@ -67,7 +67,6 @@ const editprofile = require("../assets/icons/editprofile.png");
 const camera = require("../assets/icons/camera.png");
 const globe = require("../assets/icons/globe.png");
 const job = require("../assets/icons/Job.png");
-
 const wifi = require("../assets/icons/wifi.png");
 const wifioff = require("../assets/icons/wifioff.png");
 const link = require("../assets/icons/link.png");
