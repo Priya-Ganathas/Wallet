@@ -30,7 +30,7 @@ const App = () => {
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'Home'}
+                initialRouteName={'Onboarding'}
             >
 
             {/* Screens */}
