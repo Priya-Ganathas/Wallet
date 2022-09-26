@@ -23,7 +23,7 @@ const CheckConnection = ({navigation}) => {
       <View>
         <View>
           <Image
-            source={icons.wifioff}
+            source={icons.wifi_off}
             style={{
               height: 100,
               width: 100,
@@ -33,8 +33,8 @@ const CheckConnection = ({navigation}) => {
             }}
           />
 
-          <Text style={{...FONTS.h2, alignSelf: 'center'}}>Whoops!</Text>
-          <Text style={{...FONTS.h3, alignSelf: 'center'}}> You appear to be offline </Text>
+          <Text style={{...FONTS.h1, alignSelf: 'center'}}> Whoops!</Text>
+          <Text style={{...FONTS.h2, alignSelf: 'center'}}> You appear to be offline </Text>
           <Text style={{...FONTS.h4, alignSelf: 'center'}}>  You can't Scan until you're connected to the Internet </Text>
         </View>
 
