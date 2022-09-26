@@ -34,8 +34,8 @@ const CheckConnection = ({navigation}) => {
           />
 
           <Text style={{...FONTS.h2, alignSelf: 'center'}}>Whoops!</Text>
-          <Text style={{...FONTS.h4, alignSelf: 'center'}}> No Internet connection found, Check your </Text>
-          <Text style={{...FONTS.h4, alignSelf: 'center'}}>  connection or try again. </Text>
+          <Text style={{...FONTS.h3, alignSelf: 'center'}}> You appear to be offline </Text>
+          <Text style={{...FONTS.h4, alignSelf: 'center'}}>  You can't Scan until you're connected to the Internet </Text>
         </View>
 
         <TouchableOpacity
@@ -51,7 +51,7 @@ const CheckConnection = ({navigation}) => {
           onPress={() => Navigation.goBack()}>
           <Text style={{color: '#fff', textAlign: 'center', ...FONTS.h3}}>
             {' '}
-            Refresh{' '}
+            Retry{' '}
           </Text>
         </TouchableOpacity>
       </View>

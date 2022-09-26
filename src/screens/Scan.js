@@ -18,7 +18,7 @@ import { onPress } from "deprecated-react-native-prop-types/DeprecatedTextPropTy
 
 const Scan = ({ navigation }) => {
 
-    <CheckConnection/>
+    
 
     function renderHeader() {
 
@@ -202,6 +202,7 @@ const Scan = ({ navigation }) => {
         //     })
     
     return (
+
         <View style={{ flex: 1, backgroundColor: COLORS.transparent }}>
             <RNCamera
                 ref={ref => {
@@ -218,8 +219,9 @@ const Scan = ({ navigation }) => {
                     buttonPositive: "OK",
                     buttonNegative: "Cancel"
                 }}
-            
+             
                 >
+            <CheckConnection/>
        
                 {renderHeader()}
                 {renderScanFocus()}
