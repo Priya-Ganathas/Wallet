@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, Image, ImageBackground, TouchableOpacity, FlatList, Animated, Platform} from 'react-native';
 import {Svg} from 'react-native-svg';
 import { VictoryPie } from 'victory-native';
@@ -14,25 +14,16 @@ const Expense = ({ navigation }) => {
     const [viewMode, setViewMode] = React.useState("chart")
     const [selectedCategory, setSelectedCategory] = React.useState(null)
     const [showMoreToggle, setShowMoreToggle] = React.useState(false)
+    const [amount, setAmount] = useState('0');
    
          useEffect(() => {
            getAccountDetails()
           },[]);
 
           const getAccountDetails = async() =>{
-            // console.log("userxxxxxxxxxxxxxxxxxxxxxxxxs: ",auth().currentUser.uid);
-            // const users1 = await auth().currentUser.uid.toString()
-            // const users = await firestore().collection('Balance').doc(user1).get();
-            //     console.log("amount: ", users);
-
-            //     const usersbalance = await firestore().collection('Balance').where('kRiXzbe95LmtSgPse3jq',"==", users1).get().then(res=> console.log("res: ",res));
-            //     console.log("usersbalance: ", usersbalance);
-
-            const users3 = await firestore().collection('Balance').get();
-            console.log("amount: ", users3);
-            const user1 = await firestore().collection('Balance').doc('XUbRVVSN1fWuZNXAB1QaJp3EYOg1').get();
-            console.log("amount: ", users1);
-
+            const users1 = await auth().currentUser.uid.toString();
+            const users = await firestore().collection('Balance').doc('user1').get();
+            setAmount(users.data().amount);
           }
 
  
@@ -43,7 +34,8 @@ const Expense = ({ navigation }) => {
             
                 <View>
                     <Text style={{ color: COLORS.darkgreen2, ...FONTS.h2 }}>My Expenses</Text>
-                    <Text style={{ ...FONTS.h3, color: COLORS.lightGray2 }}> Rs.70,000</Text>
+
+                    <Text style={{ ...FONTS.h3, color: COLORS.lightGray2 }}> Rs. {amount ? amount : '70,000'} </Text>
 
                 </View>
 
