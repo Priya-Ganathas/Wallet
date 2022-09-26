@@ -1,9 +1,9 @@
 
-const loginBackground = require("../assets/images/login-background.png")
+const loginBackground = require("../assets/images/login-background.jpeg")
 const onboardingImage = require ("../assets/images/onboardingImage.jpeg")
 const FinTechLogo = require("../assets/images/FinTech_logo.png");
 const focus = require("../assets/images/focus.png");
-const GoPremium = require("../assets/images/GoPremium.png")
+const GoPremium = require("../assets/images/GoPremium.jpeg")
 const PowerCut = require("../assets/images/PowerCut.jpeg")
 // Dummy
 const lkFlag = require("../assets/images/lk-flag.jpg");
