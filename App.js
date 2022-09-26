@@ -2,17 +2,20 @@ import React from 'react';
 
 import { Image, TouchableOpacity } from 'react-native';
 
-import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp ,Bill, Game , CustomMenu, Notifications, SendMoney, CardPayment, ViewProfile, EditProfile } from "./screens";
+import { Onboarding, Onboarding2 ,Login,  SignUp, Home, Scan, Expense, ForgotPassword, Otp ,Bill, Game , CustomMenu, Notifications, SendMoney, CardPayment, ViewProfile, EditProfile } from "./src/screens";
 
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { NavigationContainer } from '@react-navigation/native';
 
-import Tabs from "./navigation/tabs";
+import Tabs from "./src/navigation/tabs";
 
 import { icons, COLORS, SIZES } from './constants/Index';
 
 import { useAccordionButton } from 'react-bootstrap';
+
+import { Provider } from "react-redux";
+import {configureStore} from './src/store/store'
 
 console.disableYellowBox = true;
 
@@ -20,7 +23,8 @@ const Stack = createStackNavigator();
 
 const App = () => {
 
-    return (
+       return (
+        <Provider store={configureStore()}>
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions= {{
@@ -119,6 +123,7 @@ const App = () => {
 
             </Stack.Navigator>
         </NavigationContainer>
+        </Provider>
     )
 }
 
