@@ -104,12 +104,12 @@ const Scan = ({ navigation }) => {
                     padding: SIZES.padding * 0.5,
                     // borderTopLeftRadius: SIZES.radius,
                     // borderTopRightRadius: SIZES.radius,
-                    borderTopLeftRadius: 250,
-                    borderTopRightRadius: 250,
+                    borderTopLeftRadius: 30,
+                    borderTopRightRadius: 30,
                     backgroundColor: COLORS.darkLime
                 }}
             >
-                <Text style={{ ...FONTS.h4, color:COLORS.white, alignSelf:'center'}}> Another payment methods </Text>
+                <Text style={{ ...FONTS.h4, color:COLORS.white, }}> Another payment methods </Text>
 
                 <View
                     style={{

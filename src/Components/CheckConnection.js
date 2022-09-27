@@ -25,11 +25,10 @@ const CheckConnection = ({navigation}) => {
           <Image
             source={icons.wifi_off}
             style={{
-              height: 100,
-              width: 100,
+              height: 500,
+              width: 50,
               marginTop: 150,
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignSelf:'center'
             }}
           />
 

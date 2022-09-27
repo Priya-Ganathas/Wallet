@@ -66,8 +66,8 @@ const Home = ({ navigation }) => {
                     source={item.img}
                     resizeMode="cover"
                     style={{
-                        width: 110,
-                        height: '60%',
+                        width: 130,
+                        height: '70%',
                         borderRadius: 15,
                     }}
                 />
@@ -117,7 +117,7 @@ const Home = ({ navigation }) => {
                     style={{
                         top:25,
                         width: "100%",
-                        height: "80%",
+                        height: "50%",
                         borderRadius: 15,
                         marginTop : SIZES.padding * -0.7 
                     }}
@@ -128,8 +128,8 @@ const Home = ({ navigation }) => {
             {/* Options */}
 
             <View style={{ flex: 1, justifyContent: 'center' }}>     
-                <Text style={{ marginTop: SIZES.padding * -2 , marginHorizontal: SIZES.padding, ...FONTS.body3, color: COLORS.black }}> Features </Text>
-                <View style={{ flexDirection: 'row', marginTop: SIZES.padding, paddingHorizontal: SIZES.base }}>
+                <Text style={{ marginTop: -120 , marginHorizontal: SIZES.padding, ...FONTS.body3, color: COLORS.black }}> Features </Text>
+                <View style={{ flexDirection: 'row', marginTop: SIZES.padding, paddingHorizontal: SIZES.base, marginBottom: 5 }}>
                     <OptionItem
                         icon={icons.reload}
                         bgColor={['#46aeff', '#5884ff']}
@@ -187,7 +187,7 @@ const Home = ({ navigation }) => {
             {/* //specialPromoData */}
             <View style={{ 
                 flex: 1, }}>
-                <Text style={{  marginTop: SIZES.padding * 0, marginHorizontal: SIZES.padding, ...FONTS.body3, marginBottom:15, color: COLORS.black}}>Special Promos </Text>
+                <Text style={{  marginTop: -20, marginHorizontal: SIZES.padding, ...FONTS.body3, marginBottom:15, color: COLORS.black, marginBottom: 10}}>Special Promos </Text>
                 <FlatList
                     horizontal
                     showsHorizontalScrollIndicator={false}
