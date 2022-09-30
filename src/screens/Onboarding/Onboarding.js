@@ -13,12 +13,25 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import { images, COLORS, FONTS, SIZES } from '../../constants/Index';
+import { NetworkConsumer, NetworkProvider } from 'react-native-offline';
 
 const Onboarding = ({ navigation }) => {
  
     // Render
     return (
         <SafeAreaView style={styles.container}>
+            <NetworkConsumer>
+                {({isConnected}) => 
+                !isConnected && (
+                    <View style = {{backgroundColor : COLORS.gray}}>
+                        <Text style = {{textAlign : 'center', color : COLORS.white}}>
+                            No Internet
+                        </Text>
+                    </View>
+                )
+                }
+            </NetworkConsumer>
+
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Image
                     source={images.onboardingImage}

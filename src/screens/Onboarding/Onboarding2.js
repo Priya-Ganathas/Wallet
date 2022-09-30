@@ -15,8 +15,20 @@ import LinearGradient from "react-native-linear-gradient";
 import { COLORS , SIZES, FONTS, images} from "../../constants/Index";
 
 import {CustomButton} from "../../Components"
+import { NetworkProvider, NetworkConsumer } from 'react-native-offline';
 
 const Onboarding2 = ({ navigation }) => {
+    <NetworkConsumer>
+    {({isConnected}) => 
+    !isConnected && (
+        <View style = {{backgroundColor : COLORS.gray}}>
+            <Text style = {{textAlign : 'center', color : COLORS.white}}>
+                No Internet
+            </Text>
+        </View>
+    )
+    }
+</NetworkConsumer>
 
     function renderHeader () {
         return (
@@ -127,12 +139,14 @@ return(
     }
 
     return (
+
+
         <View
             style = {{
                 flex:1,
                 backgroundColor: COLORS.black
-            }}
-        >
+            }}>
+        
             <StatusBar barstyle = "light-content"/>
 
                 {/*Header*/}
@@ -142,6 +156,7 @@ return(
                 {renderDetail()}
 
         </View>
+        
     )
 }
 

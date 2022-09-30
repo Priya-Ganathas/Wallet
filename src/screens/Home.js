@@ -14,6 +14,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { specialPromoData } from './DummyData/HomeScreen_Data';
 import auth from '@react-native-firebase/auth';
 import { images, icons, COLORS, FONTS, SIZES } from '../constants/Index';
+import { NetworkProvider, NetworkConsumer } from 'react-native-offline';
 
 const OptionItem = ({ bgColor, icon, label, onPress }) => {
     return (
@@ -77,12 +78,13 @@ const Home = ({ navigation }) => {
         )
     }
 
-   return (         
+   return (    
+    
+
 
 
         <View style={styles.container}>  
-
-                
+            
         <ImageBackground style = {{flex : 1}}
                         source = {images.screensbg1}>
         <View style={{
@@ -126,7 +128,6 @@ const Home = ({ navigation }) => {
    
    
             {/* Options */}
-
             <View style={{ flex: 1, justifyContent: 'center' }}>     
                 <Text style={{ marginTop: -120 , marginHorizontal: SIZES.padding, ...FONTS.body3, color: COLORS.black }}> Features </Text>
                 <View style={{ flexDirection: 'row', marginTop: SIZES.padding, paddingHorizontal: SIZES.base, marginBottom: 5 }}>
@@ -155,7 +156,6 @@ const Home = ({ navigation }) => {
                         onPress={() => { console.log("Wallet") }}
                     />
                 </View>
-
                 <View style={{ flexDirection: 'row', marginTop: SIZES.radius, paddingHorizontal: SIZES.base }}>
                     <OptionItem
                         icon={icons.bill}
@@ -183,7 +183,6 @@ const Home = ({ navigation }) => {
                     />
                 </View>
             </View>
-
             {/* //specialPromoData */}
             <View style={{ 
                 flex: 1, }}>
@@ -196,10 +195,9 @@ const Home = ({ navigation }) => {
                     renderItem={({ item, index }) => renderspecialPromoData(item, index)}
             />
             </View>
+            </ImageBackground>  
+            </View>
 
-            </ImageBackground>
-          
-        </View>
 
       
         
@@ -211,7 +209,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.black
-    },
+    }
 });
 
 export default Home;

@@ -16,6 +16,7 @@ import { useAccordionButton } from 'react-bootstrap';
 
 import { Provider } from "react-redux";
 import {configureStore} from './src/store/store'
+import {NetworkProvider} from 'react-native-offline'
 
 console.disableYellowBox = true;
 
@@ -25,17 +26,18 @@ const App = () => {
 
        return (
         <Provider store={configureStore()}>
+        <NetworkProvider>
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions= {{
                    headerShown : false
                 }}
-                initialRouteName={'Home'}
+                initialRouteName={'Onboarding'}
             >
 
             {/* Screens */}
 
-                <Stack.Screen
+                <Stack.Screen 
                     name="Onboarding"
                     component={Onboarding}
                 />
@@ -123,6 +125,7 @@ const App = () => {
 
             </Stack.Navigator>
         </NavigationContainer>
+        </NetworkProvider>
         </Provider>
     )
 }
