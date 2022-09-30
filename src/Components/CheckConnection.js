@@ -14,7 +14,6 @@ import {useNetInfo} from '@react-native-community/netinfo';
 import {NavigationEvents} from 'react-navigation';
 
 const CheckConnection = ({navigation}) => {
-  // const CheckConnection = () => {
 
   const netInfo = useNetInfo();
 
@@ -25,14 +24,14 @@ const CheckConnection = ({navigation}) => {
           <Image
             source={icons.wifi_off}
             style={{
-              height: 500,
+              height: 50,
               width: 50,
-              marginTop: 150,
+              marginTop: 20,
               alignSelf:'center'
             }}
           />
 
-          <Text style={{...FONTS.h1, alignSelf: 'center'}}> Whoops!</Text>
+          <Text style={{...FONTS.h1, alignSelf: 'center', marginTop: 20}}> Whoops!</Text>
           <Text style={{...FONTS.h2, alignSelf: 'center'}}> You appear to be offline </Text>
           <Text style={{...FONTS.h4, alignSelf: 'center'}}> You can't Scan until you're connected to the Internet </Text>
         </View>
@@ -49,8 +48,7 @@ const CheckConnection = ({navigation}) => {
           }}
           onPress={() => Navigation.goBack()}>
           <Text style={{color: '#fff', textAlign: 'center', ...FONTS.h3}}>
-            {' '}
-            Retry{' '}
+            Retry
           </Text>
         </TouchableOpacity>
       </View>
