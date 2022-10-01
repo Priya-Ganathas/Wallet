@@ -36,7 +36,7 @@ const CheckConnection = ({navigation}) => {
           <Text style={{...FONTS.h4, alignSelf: 'center'}}> You can't Scan until you're connected to the Internet </Text>
         </View>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={{
             backgroundColor: COLORS.darkLime,
             alignSelf: 'center',
@@ -46,11 +46,11 @@ const CheckConnection = ({navigation}) => {
             height: 50,
             borderRadius: 35,
           }}
-          onPress={() => Navigation.goBack()}>
+              onPress={() => navigation.navigate('Home')}>
           <Text style={{color: '#fff', textAlign: 'center', ...FONTS.h3}}>
             Retry
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     );
 

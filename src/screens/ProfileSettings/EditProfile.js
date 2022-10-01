@@ -10,6 +10,7 @@ import ImagePicker from 'react-native-image-crop-picker';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NetworkProvider } from 'react-native-offline';
+import { NetworkConsumer} from 'react-native-offline';
 
 const EditProfile = ({ navigation }) => {
 
@@ -79,6 +80,18 @@ const EditProfile = ({ navigation }) => {
     style = {{flex : 1}}
       source = {images.background1}
    >
+
+<NetworkConsumer>
+    {({isConnected}) => 
+    !isConnected && (
+        <View style = {{backgroundColor : COLORS.gray}}>
+            <Text style = {{textAlign : 'center', color : COLORS.white}}>
+                No Internet
+            </Text>
+        </View>
+    )
+    }
+</NetworkConsumer>
     
     <View style={styles.container}>
     <BottomSheet

@@ -35,6 +35,7 @@ import Purchases from '../../assets/icons/wallet.png';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { disableFullscreenUI } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
 import { onPress } from 'deprecated-react-native-prop-types/DeprecatedTextPropTypes';
+import { NetworkConsumer, NetworkProvider } from 'react-native-offline';
 
 const CustomMenu = ({ navigation }) => {
 
@@ -46,6 +47,18 @@ const CustomMenu = ({ navigation }) => {
         <View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style = {{width:'100%' , backgroundColor: COLORS.black, height:100}}></View>
+                
+                <NetworkConsumer>
+                {({isConnected}) => 
+                !isConnected && (
+                    <View style = {{backgroundColor : COLORS.gray}}>
+                        <Text style = {{textAlign : 'center', color : COLORS.white}}>
+                            No Internet
+                        </Text>
+                    </View>
+                )
+                }
+             </NetworkConsumer>
 
                 <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', padding: 5}} >
                     <View style = {{ marginTop:-90, alignItems:'center',padding : 20}}>

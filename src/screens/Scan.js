@@ -9,18 +9,15 @@ import {
 } from "react-native"
 import { RNCamera } from 'react-native-camera'
 import { LogBox } from 'react-native';
-
-
-import CheckConnection from "../../src/Components/CheckConnection";
-
 import { COLORS, FONTS, SIZES, icons, images } from "../constants/Index";
 import { onPress } from "deprecated-react-native-prop-types/DeprecatedTextPropTypes";
 
+
+
+
 const Scan = ({ navigation }) => {
 
-    
-
-    function renderHeader() {
+     function renderHeader() {
 
            return (
             <View style={{ flexDirection: 'row', marginTop: SIZES.padding * 2, paddingHorizontal: SIZES.padding * 3 }}>
@@ -202,8 +199,10 @@ const Scan = ({ navigation }) => {
         //     })
     
     return (
-
-        <View style={{ flex: 1, backgroundColor: COLORS.transparent }}>
+     
+     
+     <View style={{ flex: 1, backgroundColor: COLORS.transparent }}>
+        
             <RNCamera
                 ref={ref => {
                     this.camera = ref
@@ -221,13 +220,11 @@ const Scan = ({ navigation }) => {
                 }}
              
                 >
-            <CheckConnection/>
-       
                 {renderHeader()}
                 {renderScanFocus()}
                 {renderPaymentMethods()}
             </RNCamera>
-        </View>
+         </View>
         
     )
 }

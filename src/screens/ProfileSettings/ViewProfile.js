@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet,SafeAreaView,TouchableOpacity, Image,ImageBackground} from 'react-native';
+import { View, StyleSheet,ScrollView,TouchableOpacity, Image,ImageBackground} from 'react-native';
 import { images, icons, COLORS, FONTS, SIZES } from '../../constants/Index';
 import auth from '@react-native-firebase/auth';
 import {
@@ -12,14 +12,32 @@ import {
 import { color } from 'react-native-reanimated';
 import BankData from '../DummyData/profileData';
 import { FlatList } from 'react-native-gesture-handler';
+import { NetworkConsumer} from 'react-native-offline';
 
 const ViewProfile = ({ navigation }) => {
 
   return (
+
+ 
+
+    <ScrollView style={styles.container}>
+
+    <NetworkConsumer>
+    {({isConnected}) => 
+    !isConnected && (
+        <View style = {{backgroundColor : COLORS.gray}}>
+            <Text style = {{textAlign : 'center', color : COLORS.white}}>
+                No Internet
+            </Text>
+        </View>
+    )
+    }
+    </NetworkConsumer>  
+
     <ImageBackground style = {{flex : 1}}
     source = {images.background}
    >
-    <SafeAreaView style={styles.container}>
+
       <View style={styles.userInfoSection}>
         <View style={{flexDirection: 'row', marginTop: 25, marginLeft:15}}>
           <Avatar.Image 
@@ -110,7 +128,6 @@ const ViewProfile = ({ navigation }) => {
            <Text style= {{...FONTS.h4, color: COLORS.darkLime, alignSelf:'center'}}> Sampath Bank </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Account No : 0000 0000 0000 0011 </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Balance : Rs.150.000 </Text>
-           <Text></Text>
         </View>
       </TouchableOpacity>
 
@@ -128,8 +145,7 @@ const ViewProfile = ({ navigation }) => {
            <Text style= {{...FONTS.h4, color: COLORS.darkLime,alignSelf:'center'}}> HNB Bank </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Account No : 0000 0000 0000 0022 </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Balance - Rs.200.000 </Text>
-           <Text></Text>
-        </View>
+       </View>
       </TouchableOpacity>
 
       <TouchableOpacity style = {{
@@ -146,12 +162,12 @@ const ViewProfile = ({ navigation }) => {
            <Text style= {{...FONTS.h4, color: COLORS.darkLime, alignSelf:'center'}}> Commercial Bank </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Account No : 0000 0000 0000 0033 </Text>
            <Text style= {{...FONTS.h4, color: COLORS.white}}> Balance - Rs.35.000 </Text>
-           <Text></Text>
         </View>
       </TouchableOpacity>
 
-       </SafeAreaView>
+     
   </ImageBackground>
+  </ScrollView>
 
   );
 // }
