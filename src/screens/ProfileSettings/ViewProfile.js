@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
 
   row: {
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 19,
   },
   infoBoxWrapper: {
     borderBottomColor: '#dddddd',
